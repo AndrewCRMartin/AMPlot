@@ -1,0 +1,87 @@
+\documentstyle[a4wide]{article}
+\newcommand{\amplot}{\mbox{\bf AMPlot}}
+\begin{document}
+{\large\bf This document describes the derivation of the equations used in the
+{\tt ClipWedge()} routine used in \amplot.}
+\vspace{2in}
+
+\begin{tabular}{ll}
+Let: & $G_1$ be $\frac{\mbox{sin}\alpha_1}{\mbox{cos}\alpha_1}$ \\
+     & $G_2$ be $\frac{\mbox{sin}\alpha_2}{\mbox{cos}\alpha_2}$ \\
+\end{tabular}
+
+The lines are described by the following equations:
+\begin{eqnarray}
+y   & = & G_1 x      \\
+y   & = & G_2 x      \\
+y   & = & mx + c     \\
+y^2 & = & r^2 - x^2
+\end{eqnarray}
+
+The intersect of line (3) with radius (1) is obtained by solving:
+\begin{eqnarray*}
+y                 & = & G_1 x    \\
+y                 & = & mx + c   \\
+\Rightarrow G_1 x & = & mx + c   \\
+x(G_1 -m)         & = & c        
+\end{eqnarray*}
+
+\begin{eqnarray}
+x & = & \frac{c}{(G_1 - m)}      \\
+y & = & \frac{G_1 c}{(G_1 - m)}
+\end{eqnarray}
+
+Similarly, for line (3) with radius (2):
+\begin{eqnarray}
+x & = & \frac{c}{(G_2 - m)}      \\
+y & = & \frac{G_2 c}{(G_2 - m)}
+\end{eqnarray}
+
+\newpage
+The intersect of line (3) with circle (4) is obtained by solving:
+\begin{eqnarray*}
+y                                   & = & mx + c      \\
+y^2                                 & = & r^2 - x^2   \\
+\Rightarrow (mx + c)^2              & = & r^2 - x^2   \\
+m^2x^2 + c^2 + 2mcx                 & = & r^2-x^2     \\
+(m^2 + 1)x^2 + (2mc)x + (c^2 - r^2) & = & 0           \\
+\end{eqnarray*}
+
+\begin{equation}
+\label{eq:xcirc}
+x = \frac{-2mc \pm\sqrt{4m^2c^2 - 4(m^2+1)(c^2-r^2)}}{2(m^2+1)}
+\end{equation}
+$y$ is then calculated from Eqns. (3) and the value of $x$ from (\ref{eq:xcirc}).
+\vspace{2em}
+
+Before solving for the radii, the slopes should be compared with the slope of the 
+line; if identical, the lines will intersect at $\infty$.
+
+These equations result in a possible 4 intersection points. The following checks are 
+made to select the two sets of coordinates for the end points of the clipped line:
+\begin{enumerate}
+\item For each radius intersect, reject if distance from centre of circle is greater 
+than the radius ($r$) of the circle.
+\item For each radius intersect still valid, if it is not at the centre of the
+circle, reject if the angle of the point is outside the range $\alpha_1$--$\alpha_2$.
+\item For each circumference intersect, reject if the angle of the point is 
+outside the range $\alpha_1$--$\alpha_2$.
+\end{enumerate}
+We should now have 0, 2, or 3 valid intersects. 
+\begin{itemize}
+\item If 0, the line does not intersect the wedge. 
+\item If 3, we have one of two special cases: Either the line passes through 
+the centre of the circle (and thus intersects both radii as well as the 
+circumference) {\em or\/} the line passes through the radius/circle intersect and 
+the radius. If the former, one set of coordinates is set to the origin while the 
+other is set to the valid circle intersect; if the latter, the circle intersect is 
+discarded and the two line intersect points are used.
+\item If 2, we have the standard case: either 2 line intersects, or a line and a 
+circunference intersect.
+\end{itemize}
+Finally, a check is made that the line does not end up being just a point.
+
+\end{document}
+
+
+

@@ -1,0 +1,33 @@
+\documentstyle[12pt,a4wide,sts]{article}
+\pagestyle{empty}
+\newcommand{\amplot}{\mbox{\bf AMPlot2}}
+\newcommand{\mog}{\mbox{\bf MoG}}
+\newcommand{\cpk}{\mbox{\bf CPK}}
+
+\begin{document}
+\fromaddress
+\vspace{2em}
+
+\begin{center}
+\LARGE ADDENDUM
+\end{center}
+\vspace{2em}
+
+Please note the following items which were not included in the manual or other 
+documentation:
+
+\begin{itemize}
+\item {\sf SciTech Software} does not supply IFF-DR2D fonts. If you are using this 
+plotting option, it is likely that you already have a program such as ProVector 
+which supports DR2D and will thus have some fonts. When selecting a DR2D font in 
+\amplot, you should specify the complete path and fontname unless the software you 
+are using to import the DR2D file has a default directory which it searches for 
+DR2D fonts. Since the DR2D fonts will not be plotted on the \amplot\ screen, you 
+must use the Font Translation file (See Section~5.2 in the manual) to assign a 
+lookalike Amiga font. The fontname as used in font requesters should be specified 
+in this file.
+i.e.\ if your importing software requires a complete path \& fontname, the 
+translation file must also contain a complete path \& fontname.
+\end{itemize}
+
+\end{document}

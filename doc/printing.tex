@@ -1,0 +1,65 @@
+%\documentstyle[a4wide]{report}
+\documentstyle[12pt,a4wide]{report}
+\pagestyle{empty}
+\newcommand{\amplot}{\mbox{\bf AMPlot}}
+\newcommand{\RA}[1]{\mbox{{\em Right-Amiga}--{\bf #1}}}
+\begin{document}
+
+{\LARGE\bf Printing Your Graph}
+\vspace*{4em}
+
+\amplot\ is capable of producing a PostScript or Encapsulated PostScript 
+(EPSF) file (see Sections~3.1.5 and~4.2). It will not produce output directly to a
+PostScript printer. If you select EPSF output, you must import 
+the file into a suitable desk-top publishing (DTP) program which will allow you to 
+rotate and scale the graph for inclusion in a larger document.
+
+If you have selected a standard PostScipt file as the output format, this must be 
+sent to the printer using a command from the CLI. Assuming you have a PostScript 
+printer attached to the parallel (Centronics) port of your Amiga, you should use 
+the following command:
+\begin{verbatim}
+            COPY <file.ps> TO PAR:
+\end{verbatim}
+where \verb1<file.ps>1 is the name of the file you have saved from \amplot.
+Similarly, if the printer is attaced to the serial (RS232) port, you should use the 
+command:
+\begin{verbatim}
+            COPY <file.ps> TO SER:
+\end{verbatim}
+Note, that you should {\em not\/} copy the file to PRT:\ (the Amiga printer device) 
+since this will insert control codes not required by your PostScript printer. In 
+addition, it is important that your current default directory is the one in which 
+the file is saved, or that you specify the full path to the file.
+
+For example, suppose that you save a PostScript file called \verb1mygraph.ps1 in a 
+directory (drawer) named 
+\verb1Work:PSFiles1. Assuming your printer is attached to the parallel port, you 
+should type the following command from a CLI:
+\begin{verbatim}
+            COPY Work:PSFiles/mygraph.ps TO PAR:
+\end{verbatim}
+Alternatively you could make \verb1Work:PSFiles1 your current directory with the 
+command:
+\begin{verbatim}
+            CD Work:PSFiles
+\end{verbatim}
+when it would simply be necessary to issue the command:
+\begin{verbatim}
+            COPY mygraph.ps TO PAR:
+\end{verbatim}
+substituting the appropriate name for each file you wish to print.
+
+Since the Amiga is multi-tasking, you can keep a CLI window open for this purpose 
+while you are running \amplot. You do not need to exit from \amplot\ to print the 
+file, just switch windows and type the appropriate command.
+
+Alternatively, you might decide to write a script to copy a specific file (for 
+example \verb1temp.ps1) from the RAM:\ disk to your printer. Using ICONX (see your 
+Amiga manual) you could then attach an icon to this script file, such that double 
+clicking on the icon would print the file. Then, it is simply necessary for you to 
+save the PostScript from \amplot\ under your chosen name on the RAM:\ disk and 
+double click on the icon to print the file.
+
+
+\end{document}

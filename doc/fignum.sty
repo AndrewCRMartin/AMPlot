@@ -1,0 +1,10 @@
+% Figures and tables are to be numbered sequentially throughout the
+% thesis, rather than within chapters; for style consistency, do
+% equations the same.  The following \def of \cl@chapter is a kludge:
+% really there should be a \removefromreset, to stop figure numbers, etc.,
+% from being reset at chapter beginnings
+\def\cl@chapter{\@elt{section}\@elt{footnote}}
+\def\thefigure{\@arabic\c@figure}
+\def\thetable{\@arabic\c@table}
+\def\theequation{\arabic{equation}}
+

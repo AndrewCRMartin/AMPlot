@@ -1,0 +1,1109 @@
+\documentclass{report}
+\usepackage{a4}
+\usepackage{fignum}
+
+\newcommand{\amplot}{{\bf AMPlot2}}
+\newcommand{\RA}[1]{\mbox{{\em Right-Amiga}--{\bf #1}}}
+\newcommand{\degree}{\mbox{$\mbox{}^\circ$}}
+
+\hyphenation{promp-ted}
+\hyphenation{pro-ject}
+\hyphenation{Post-Script}
+
+\makeindex
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COPYRIGHT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\Large\sf SciTech Software \bf Licence\index{Licence} Agreement
+\end{center}
+\vspace*{1ex}
+This software is protected by United Kingdom Copyright\index{Copyright}
+Law and International 
+Treaty provisions. You must therefore treat this software like a book with the 
+exception that you are authorised to make {\bf two} backup\index{Backing Up}
+copies for the sole purpose of protecting your investment in this software.
+
+The software is licensed for use on one Amiga computer at any one time by any
+number of people. Thus, you 
+may freely move the software from one computer to another as long as there is no 
+possibility of the software being used at one location while it is being used at 
+another location. Just as a book may only be read by one person at a time (unless 
+it is illegally photocopied\ldots), this software may only be used by one person 
+on a single computer at one time. If this software is in use on more than one 
+computer at the same time, you are in breach of {\sf SciTech Software's} 
+copyright and of this licence agreement. Consequently, you are breaking the law 
+and forfeit the right to use this software.
+
+\vspace*{1em}
+\begin{center}
+\Large\bf Warranty\index{Warranty}
+\end{center}
+\vspace*{1ex}
+The physical diskette and documentation are warranted\index{warranty} to be free 
+from defects in 
+materials and workmanship for thirty (30) days from the date of purchase. If a 
+defect in the diskette or the documentation is notified within 30 days, {\sf 
+SciTech Software} will replace the defective diskette and/or documentation. Such 
+warranty is limited to the replacement and shall not, in any event,
+encompass any other damages, 
+including, but not limited to, loss of profit, special, incidental, consequential, 
+or other claims.
+
+The program and documentation is sold ``as is'' and without warranty as to 
+performance, merchantability, or fitness for a particular purpose. In particular,
+while every effort has been made to make the PostScript output of this program
+match the requirements of the PostScript and EPSF standards, no guarantee is made
+that the software will work with all PostScript software. If you identify any
+incompatibilities, you are encouraged to report them on the bug or enhancement
+request forms supplied.
+
+This warranty does not affect your statutory rights.
+
+\vspace*{1em}
+\begin{center}
+\Large\bf Registration
+\end{center}
+\vspace*{1ex}
+Please complete and return the registration\index{Registration}
+form at the back of this manual.
+Doing so will entitle you to updates to the software. Also supplied at the back 
+of the manual and on the disk are Bug Report and Enhancement Request forms.
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\amplot\ is a flexible scientific and technical graph plotting program
+orignally written for the 
+Commodore Amiga\footnote{Amiga, Workbench and Kickstart are trademarks of 
+Commodore-Amiga, Inc.}
+which produces PostScript\footnote{PostScript is a trademark of Adobe Systems, Inc.},
+HPGL\footnote{HPGL is a trademark of Hewlett Packard, Inc.},
+and (on the Amiga) IFF-DR2D output.
+
+The Unix version of \amplot\ does not have a graphical interface ---
+control of the program is \emph{via} control commands embedded in the datafile.
+
+Unlike most graph-plotting programs on the Amiga, the emphasis in \amplot\ is on 
+the quality of output---the screen representations of graphs are only 
+approximations. \amplot\ uses a hires, interlaced screen\index{screen display}
+on which a maximum of three
+pen\index{pens} colours may be displayed (in addition to the background colour).
+
+\amplot\ is designed to produce reproduction-quality graphs for use in scientific 
+and technical documents. Four major graphing formats are supported: scatter plots, 
+line plots, bar charts and pie charts. Within these major categories, numerous 
+options are available.
+
+On the Amiga, \amplot\ also has an extensive ARexx\footnote{ARexx is
+Copyright Wishful Thinking Development Corp.} interface which allows
+control over the graph, plotting of additional points and definition
+of functions for fitting using the fitting routines included in
+\amplot.
+
+\section{Running \amplot}
+Under Unix, \amplot\ is run using the command:
+%\begin{verbatim}
+%      amplot <datafile>
+%\end{verbatim}
+where \verb1<datafile>1 is the file of data to be plotted. Output is
+to standard output, so you will wish to redirect this to a file or
+pipe it to a PostScript printer or viewing program.
+
+The file of data which is used as input to the program can be as simple as two 
+columns of numbers or may contain a multitude of commands to describe the exact 
+format of your graph (Chapter~\ref{ch:datafile}). You can create such a file with 
+any text editor\index{editing}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% MENUS & REQUESTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Menus and Requesters}
+\label{ch:menus}
+This chapter will describe each of the menus and requesters with its usage. The 
+sections will be titled by menu name, with subsections matching menu items.
+
+Under Unix, there are no Menus and Requesters (dialogue boxes); the
+program is controlled \emph{via} commands in the data file (See
+Chapter~\ref{ch:datafile}). This chapter has been left in place since
+it describes the functions of those commands.
+
+\section{The Project Menu}
+
+
+\subsection{Paper}
+{\bf Project/Paper}\index{Paper} displays a requester in which you can set 
+the size of the output graph and, for PostScript and HPGL plots, its offset 
+from the bottom left hand corner of the paper. PostScript assumes paper is in 
+portrait orientation while HPGL assumes landscape orientation. These 
+dimensions are specified in inches. The default paper size and position places 
+the graph at the top of a sheet of A4 paper with a suitable offset at the left to 
+allow the paper to be bound when using PostScript output. 
+The dimensions actually refer to the bounds of the 
+graph itself. The axis labels and titles will fall outside this area so the total 
+size of the graph will be somewhat larger than the specified size.
+In addition there is a checkbox for making the PostScript output conform to the
+EPSF\index{EPSF} standard. When this gadget is selected, the Offset gadgets become 
+redundant since the program which imports the EPSF file will handle offsets and image 
+size. If the size of text on the graph is important, however, the sizes specified 
+in this requester should match the final required graph size as closely as possible.
+
+
+\subsection{Set Pens}
+\amplot\ \index{Set Pens}has six `pens'. Each pen has an associated colour (for 
+screen and HPGL output), thickness of line (for PostScript, EPSF and DR2D output), 
+datapoint mark and join feature.
+{\bf Project/Set Pens} displays a requester in which you can set the colour and 
+thickness for each pen. Three colours (as well as the background colour) are 
+available for display on the screen. Values greater than 3 may be specified if your 
+HPGL plotter has more than 3 pens. The screen display will be restricted to one of 
+the 3 screen pens. The line thickness is specified in points 
+(1pt~$=\frac{1}{72}$inch). Your data may be assigned to any of the six pens. By 
+default, the first set of data is displayed in Pen~1, the second in Pen~2, etc.
+This may be changed using the {\bf Pen} item of the {\bf Lines} menu (See 
+Subsection~\ref{ss:pen}).
+However, the axes are always displayed in Pen~6 and the grid across the graph is 
+always in Pen~5.
+
+
+
+\section{The Style Menu}
+
+
+\subsection{XY}
+{\bf Style/XY} \index{XY}\index{Line Plot} is used to select the default 
+line graph style. That is, each datapoint is joined by a line. 
+The {\bf Style/Line Setup} menu item may be used to add marks to each 
+datapoint. Each line may be displayed in any one of the six available pens (See 
+Subsection~\ref{ss:pen}).
+
+
+\subsection{Scatter}
+The {\bf Style/Scatter} \index{Scatter Plot} graph style is similar to the {\bf XY} style, 
+but, by default, the datapoints are not joined. Rather, they are marked, by default, 
+with crosses. 
+These defaults may be changed using the {\bf Style/Line Setup} menu item 
+(Subsection~\ref{ss:dp}).
+
+
+\subsection{Bar}
+The {\bf Style/Bar} \index{Bar Chart} menu item displays your data as 
+a bar chart. By default, each 
+successive set of data is overlaid on the last set of data, but with the bars 
+shrunk in width by 20\%. This shrink factor, together with other style options, 
+such as outline, grouped and stacked charts may be set using the {\bf Style/Bar 
+Style} menu option (Subsection~\ref{ss:barstyle}). You may fill the bars of 
+your chart 
+using the {\bf Fills} sub-items of the {\bf Lines} menu (Subsection~\ref{ss:fill}).
+Note that the first bar will have a width dependent on the minimum X-boundary of 
+the graph. Depending on your data, you may find it necessary to change the minimum 
+x-boundary using the 
+{\bf Set Axes} item of the {\bf Axes} menu (Subsection~\ref{ss:bounds}).
+Alternatively, you may supply a datapoint in the graph with zero Y-value at a 
+suitable X-value to achieve the correct bar width.
+
+\subsection{Pie}
+The {\bf Style/Pie} \index{Pie Chart} menu item displays your data as 
+a Pie chart. This menu item will be disabled unless your datafile contains the 
+keywords {\tt PIE} or {\tt COLUMNS 1}. Only one set of data may 
+be displayed and a number of features of the other graph styles are not relevant. 
+The `slices' of the pie may be filled using the {\bf Fills} item of the
+{\bf Lines} menu (Subsection~\ref{ss:fill}) and may be ejected with the {\bf 
+Style/Eject Slice} menu item. 
+
+
+\subsection{Errors}
+{\bf Style/Errors} (abbreviation: \RA{E}) allows \index{Errors} you to switch error 
+bars on and off on your graph, providing 
+error bar data has been supplied in your datafile.
+The dataset may contain three columns of data, such that the same value is
+used for both positive and negative parts of the
+error bars or four columns of data specifying separate positive and
+negative errors. The first value read (i.e.\ that in column 3 of the dataset)
+is the negative error, the second value (i.e.\ that in column 4 of the dataset)
+is the positive error. If any error value (positive or negative) is zero, no bar
+will be drawn for this half of the error.
+
+\subsection{Eject Slice}
+{\bf Style/Eject Slice}\index{eject} allows slices of a Piechart to be 
+ejected or replaced. 
+Having selected this menu item, you must click on the pie slice to move. The 
+percentage by which the slices are ejected is set in the {\bf Style/Pie Setup} 
+requester.
+
+\subsection{Line Setup}
+\label{ss:dp}
+{\bf Style/Line Setup} \index{Line Setup} (abbreviation: \RA{L}) displays a 
+requester in which you may set the data point mark 
+to be used with each pen in the XY and Scatter styles. Each pen also has a {\bf Link}
+toggle gadget. If this is switched on for every pen, the Scatter and XY styles become 
+equivalent. {\bf Link} causes datapoints to be joined by a line, even 
+when the Scatter 
+style has been chosen. This allows you to display one set of data simply as 
+datapoint marks, with another set of data with the data points joined. This may 
+be used if you have a set of experimental data which you wish to display as, for 
+example, filled circles and a fitted curve which may be displayed with the join 
+feature switched on, but with no datapoint marks. 
+
+This requester also allows you to specify the width of the cross parts of error 
+bars and the size of datapoint marks. Both of these values are specified in points.
+
+\subsection{Bar Setup}
+\label{ss:barstyle}
+{\bf Styles/Bar Setup} \index{Bar Setup} displays a requester in which 
+you can control the exact format of bar charts.
+
+You may change the default (overlaid) barchart style to a grouped style 
+\index{Bar Grouped} where successive sets of data are displayed adjacent to one 
+another, or to a stacked style, where successive sets of data are stacked on top 
+of eachother. There are certain restrictions on these 2 styles---you must have the 
+same number of data points in each data set and the width of each bar must be the 
+same. Normally, these styles are used for displaying numeric data on the Y-axis and 
+largely non-numeric data (such as months, years, or names) along the X-axis. 
+Thus, in the datafile, it is easiest to specify the X-axis data as 1,2,3\ldots\ 
+switch off the X-axis labels with the {\bf No X-axis labels} gadget in the 
+{\bf Axis \& Pie Labels} item of the {\bf Text} menu and supply your own X-axis 
+labels using the same requester (Section~\ref{ss:bplab}).
+Conversely the outline style \index{Bar Outline} is used when it is the area under 
+the graph which is important and the bars may be of differing widths.
+
+You may set the percentage by which successive sets of data are shrunk
+\index{Bar Shrink} using the supplied gadget
+and whether or not the first data set is shrunk using the {\bf Shrink First} 
+checkbox. Bars are shrunk always shrunk in the grouped style; should you wish bars 
+not to be shrunk, simply set the shrink factor to zero. 
+
+The {\bf Fill all bars} checkbox controls whether fills are applied to the whole 
+dataset or to individual bars.
+
+
+\subsection{Pie Setup}
+The {\bf Styles/Pie Setup}\index{pie setup} requester allows you to define where 
+the first slice 
+of the piechart is (0 = right-pointing x-axis, 90 = up-pointing y-axis, etc.).
+Labels added to piecharts using the {\bf Text/Axis \& Pie Lables} requester will 
+remain associated with the correct slice while labels added with the {\bf Text/Extra 
+Labels} requester will not move as the starting angle of the piechart is changed.
+This requester also allows you to specify the percentage by which slices are 
+ejected from the pie.
+
+
+
+\section{The Axes Menu}
+
+\subsection{LogX}
+{\bf Axes/LogX} causes \index{Log Axes} the X-axis to be displayed on 
+a log scale (to base 10). Subticks will be 
+placed between the labelled ticks. If your axis only
+spans one log value (i.e.\ non-log values from 0.1 to 1, 1 to 10, 10 to 100, 
+etc.), subticks will also be labelled if you switch on the {\bf Subticks} checkbox 
+in the {\bf Axes/Set Axes} requester. \amplot\ will check that your data are valid 
+for taking logs (i.e.\ all values are greater than zero). If the data are invalid, 
+selecting this option will simply have no effect.
+
+
+\subsection{LogY}
+{\bf Axes/LogY} causes \index{Log Axes} the Y-axis to be displayed on 
+a log scale (to base 10). Subticks will be 
+placed between the labelled ticks. If your axis only
+spans one log value (i.e.\ non-log values from 0.1 to 1, 1 to 10, 10 to 100, 
+etc.), subticks will also be labelled if you switch on the {\bf Subticks} checkbox 
+in the {\bf Axes/Set Axes} requester. \amplot\ will check that your data are valid 
+for taking logs (i.e.\ all values are greater than zero). If the data are invalid, 
+selecting this option will simply have no effect.
+
+
+
+\subsection{Boxed}
+{\bf Axes/Boxed} (abbreviation: \RA{B}) causes axis \index{Boxed Axes} 
+lines to be placed to the top and right of the graph. The axes are drawn in Pen~6.
+
+
+\subsection{Grid}
+{\bf Axes/Grid} (abbreviation: \RA{G}) \index{Axis Grid} switches on a grid with 
+grid lines along the tick mark positions. The grid is drawn in Pen~5.
+When you select the grid, the boxed option will be turned on automatically.
+If you have log axes, the grid will only be placed at the major tick positions. By 
+switching on subticks in the {\bf Axes/Set Axes} requester, the grid will also be 
+drawn at the subtick positions of log axes. The grid cannot be drawn at subtick 
+positions of linear axes.
+
+\subsection{Set Axes}
+\label{ss:bounds}
+{\bf Axes/Set Axes} (abbreviation: \RA{A}) displays a requester which allows you to 
+define the minimum and maximum 
+values displayed on each axis (bounds)\index{Bounds} and the spacing of ticks 
+\index{Ticks} and subticks. 
+If you change any of these, you may select the appropriate {\bf Auto} gadget to 
+restore the program's calculated values.
+
+The {\bf Clip} checkbox\index{clipping data} causes data outside the specified 
+bounds not to be plotted 
+while the {\bf Sub} checkbox switches on and off subticks on both axes. If you 
+require subticks on one axis only, they should be switched on and the 
+subtick spacing for the axis where they are not required should be set to 
+0.0.
+The {\bf Sub} checkbox also causes grid lines to be plotted at subtick positions of 
+log axes and labels to be placed at subtick positions of log axes if they span only 
+1 log unit.
+
+If you enter a minimum value which is greater than the maximum value for that axis, 
+the minimum and maximum values will be swapped automatically. If bounds are 
+supplied for a log axis which span 0.0, a requester will be displayed asking you to 
+enter positive bounds. Similarly, if your tick step size will generate more than 
+1000 ticks, you will be asked to enter a larger value.
+
+Ticks and subticks, like the axes, are drawn in Pen~6.
+
+\subsection{Follow Zero}
+{\bf Axes/Follow Zero} \index{Axis Follow Zero} causes the axes to follow 
+the zero values on the graph, rather than being placed at the far left and bottom 
+of the graph. If your graph does not span a zero value on both axes, a requester 
+will appear to check this is really what you want to do.
+
+
+\section{The Text Menu}
+
+\subsection{Title}
+{\bf Text/Title} \index{Title} displays a requester in which you may specify 
+a title for the graph. 
+The coordinates which you specify are the bottom, centre of the title (i.e.\ the 
+title is centre, bottom justified). In all requesters which require graph coordinates
+to be specified you may click in the main graph window rather than typing in numbers.
+When you click, the coordinates will be transferred into the requester.
+By default the title will be centred on the 
+graph at 90\% of its height. Choosing the {\bf Centre} gadget will restore this 
+default position. Once a title has been specified with its coordinates, the title 
+will be locked to these coordinates. Thus, if you change the bounds of the graph, 
+the title will move. You will then need to return to this requester to restore 
+the position on the graph where you wish the title to appear. Clearing the title 
+string gadget will switch the title off. You may also specify the name and size
+of the font to be used. (See Chapter~\ref{ch:fonts}.)
+
+
+\subsection{Axis Titles}
+{\bf Text/Axis Titles} \index{Axis Titles} displays a requester in which you can 
+enter titles for the axes. The requester also lets you specify the fonts to be used
+(Chapter~\ref{ch:fonts}).
+The labels will be centred along the axes. Although the Y-axis title is displayed 
+down the screen, on paper, the label will be displayed sideways, reading up the paper.
+
+
+\subsection{Axis \& Pie Labels}
+\index{Axis Labels}
+This requester allows you to set the fonts used for the axis labels;
+the font specified for X-axis labels will also be used for labels placed next 
+to slices of a piechart. 
+The precision of the axis labels may also be set. This is the number of decimal 
+places to be displayed. If a negative value is given, exponential form is used for 
+the labels. If a label will require more than 24 characters to print, it will 
+automatically be switched to exponential form. For log axes, only the sign of the 
+precision is taken into account---if positive, the precision will be 0 for label 
+values greater than 1.0 and will be adjusted automatically for label values less 
+than 1.0; if negative, exponential form will be used with 1 decimal place.
+
+The three check boxes allow labelling of the axes to be switched off and labels 
+on the x-axis to be centred. This can be useful for barcharts.
+
+Clicking the {\bf Bar/Pie Labels} gadget brings up a further Bar/Pie Labels requester.
+
+\subsubsection{Bar/Pie Labels Requester}
+\label{ss:bplab}
+This requester allows you to specify text for each bar or pie slice. You 
+can step through the labels with the {\bf Next} and {\bf Prev} gadgets. The 
+{\bf Remove} gadget removes all the labels. For datasets containing more than 100 
+items, this requester 
+will not be displayed since it would not be possible to place all the 
+labels along the x-axis or to see all the labels crowded around a piechart.
+
+With piecharts, the exact position of the label depends on the quadrant of the graph 
+into which the label is being placed. (The first quadrant starts from the 
+right-pointing horizontal axis, the second quadrant starts at the upward-pointing 
+vertical axis, etc.)
+
+\begin{center}
+\begin{tabular}{|c|l|}\hline
+Quadrant & Justification   \\ \hline
+1        & Left            \\
+2        & Right           \\
+3        & Right           \\
+4        & Left            \\ \hline
+\end{tabular}
+\end{center}
+
+If you require more precise placing of labels you may use the {\bf Text/Extra Labels}
+requester described below to place arbitrary additional labels, but note that these 
+will not move with the piechart if you change the start angle with {\bf Style/Pie 
+Setup}.
+
+
+\subsection{Key}
+{\bf Text/Key}\index{key} displays a requester which allows you to specify 
+some text for 
+each dataset to create a key. As with the {\bf Bar/Pie Labels} requester you can 
+step through the labels with the {\bf Next} and {\bf Prev} gadgets. The font for 
+the key is specified here (see Chapter~\ref{ch:fonts}) and the position of the 
+first item must also be specified.
+This may be done by clicking on the graph. The {\bf Remove} gadget will switch off 
+the key. The key will appear as a set of lines and datapoints, or (for barcharts 
+and piecharts) a set of appropriately shaded swatches next to the text.
+
+
+\subsection{Extra Labels}
+\label{ss:linlab}
+{\bf Text/Extra Labels} \index{Extra Labels} displays a requester in which you may 
+add arbitrary labels to your graph.
+You must specify the label text, coordinates (bottom, left justified), 
+font and font size (see Chapter~\ref{ch:fonts}).
+The position of the label may be specified simply by clicking in the main graph 
+window.
+To change which label is being processed, click on the {\bf Next} or {\bf Prev}
+gadgets. You may add as many labels as you like (subject to available memory) and 
+may remove labels by clicking on the {\bf Kill} gadget. The {\bf Kill All} gadget 
+removes all labels.
+
+
+
+\section{The Lines Menu}
+
+
+\subsection{Pen}
+\label{ss:pen}
+{\bf Lines/Pen} \index{Pens} allows you to alter the default mapping of pen to 
+dataset. After typing a
+pen number into the text gadget and selecting the {\bf OK} gadget you should click
+on a datapoint of a line (you should click on a datapoint 
+and not in the middle of a line). This data set will then be displayed in your chosen 
+pen.
+
+
+\subsection{Style}
+The subitems of {\bf Lines/Style} \index{Line Style} allows you to set the line 
+style for a dataset. This is independent 
+of the pen, so you may have the same pen in solid and dotted line styles. Note 
+that the PixelScript PostScript interpreter (V1.1) does not support dashed line 
+styles. Note that the exact pattern of lines in an HPGL plot may depend on your 
+plotter.
+
+
+\subsection{Fills}
+\label{ss:fill}
+Bar charts \index{Bar Fills} and pie charts \index{Pie Fills} may be filled 
+using one of 6 shades of grey or hatch styles available 
+through this option. This gives a total of 7 shades including white. It is simply 
+necessary to select a fill and click within a bar or slice of a pie chart. The 
+increasing darknesses  of fills equate to the following hatch patterns:
+\begin{center}
+\begin{tabular}{|l|l|} \hline
+Shade &  Hatch                      \\ \hline
+1     &  Upward slant               \\
+2     &  Downward slant             \\
+3     &  Horizontal                 \\
+4     &  Vertical                   \\
+5     &  Horizontal \& Vertical     \\
+6     &  Upward \& Downward slant   \\ \hline
+\end{tabular}
+\end{center}
+The {\bf Lines/Fill Control} requester allows you to switch between shaded and 
+hatched fills.
+
+
+\subsection{Fill Control}
+This\index{fill control,hatching,shading} allows you control over fills within the 
+limitations of the display 
+device. PostScript, EPSF and IFF-DR2D output allow both hatched and 
+shaded fills, while HPGL allows only hatched fills. The screen only shows 
+shaded fills. The thickness (for PostScript and IFF-DR2D) and spacing of 
+the hatching may also be specified. You cannot mix hatched and shaded fills in a 
+single plot. Note that hatching will have different effects with HPGL compared with 
+IFF-DR2D and PostScript. Because of the nature of pen plotters, hatches will be 
+overlayed in HPGL, while IFF-DR2D and PostScript will fill each area with white 
+before hatching.
+
+\subsection{No Fills}
+{\bf Fills/No Fills} removes all fills.
+
+\section{The Fitting Menu}
+
+
+\subsection{Regression}
+{\bf Fitting/Regression} \index{Regression} displays a requester in 
+which you may specify a degree for linear regression polynomial fitting. 
+This fits an equation of the form:
+$$y=a+bx+cx^2+dx^3+ex^4\ldots$$
+to your data using `singular value decomposition' (SVD) by minimising a $\chi^2$ 
+merit function.
+The polynomial degree which you specify sets the number of terms in 
+the fitted equation. A degree of 2 will fit a straight line. You may specify 
+degrees between 2 and 20, but the degree must not be greater than the number of 
+datapoints in a dataset. If this is so, a requester will be posted warning you that 
+the polynomial degree is too high.
+The fitting routine assumes that the all the datapoints have the same
+standard deviation. The coefficients derived for the fit will be displayed in the
+message window in the order shown in the equation above.
+
+The tolerence specifies the accuracy to which the fitting is performed. If 
+the coefficients are of the same order as the tolerence, a much smaller 
+value should be specified for the tolerence. The {\bf Write Data} checkbox 
+causes detailed information on the fitting to be written to a file called 
+{\tt
+AMPlotFit.data} in the directory from which \amplot\ was run. This file contains the 
+coefficients, variance and covariance matrix for each dataset. 
+
+Selecting the {\bf Off} gadget will switch the fitted curve off.
+
+
+
+\subsection{Robust}
+{\bf Fitting/Robust} switches \index{Robust Fitting}
+robust straight line fitting on or off. This form of 
+fitting weights against values lying outside the normal distribution of values 
+observed by the criterion of least absolute deviations. 
+For the equation,
+$$y = a + bx$$
+this function minimises the merit function:
+$$\sum_{i=1}^{N}\mid y_i-a-bx_i\mid$$
+rather than the $\chi^2$ function minimised in normal linear regression.
+
+
+\subsection{Fourier}
+{\bf Fitting/Fourier} \index{Fourier Smoothing} 
+displays a requester in which you may set a 
+factor for Fourier transform smoothing to remove noise from your data.
+A fast fourier transform (FFT) is 
+performed, high frequency oscillations in the data are removed using the smoothing 
+factor, and an inverse-FFT is performed on the filtered data.
+Smoothing factors greater 
+than half the number of data points render the graph virtually feature-less.
+The values need not be integers.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DATAFILE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{The \amplot\ Datafile}
+\label{ch:datafile}
+\index{Datafile}\index{Commands}
+Almost every feature available from the menus may also be set from within 
+the datafile using simple command keywords. All the available commands are shown 
+in Table~\ref{tab:commands}. 
+The commands may be in upper or lower case and may be abbreviated to the 
+fewest letters necessary for the commands to be unambiguous. In all cases 
+where text is required, if more than one word is to be included,
+the text must be enclosed in double inverted commas. For example, when 
+setting the title of a graph:
+\begin{verbatim}
+      Title "A Graph Title" 0.0 0.0
+\end{verbatim}
+
+Table~\ref{tab:commands} 
+shows command applicability in an easy-to-read format.
+
+\begin{center}
+\scriptsize
+\begin{tabular}{lccc} \hline
+                                 &           &        & Commands which     \\
+                                 & \multicolumn{2}{c}{Commands used in} %
+                                                      & do not cause the   \\ \cline{2-3}
+Command                          & Datafile  & ARexx  & graph to replot.   \\ \hline
+{\bf Data}                       &           &        &                    \\
+COLUMNS  n                       &     x     &        &                    \\
+NDATA  n                         &     x     &        &                    \\
+NEWSET                           &     x     &        &                    \\ \hline
+{\bf Output}                     &           &        &                    \\
+EPSF                             &     x     &     x  &       x            \\
+OFFSET  x   y                    &     x     &     x  &       x            \\
+SIZE  x   y                      &     x     &     x  &       x            \\ \hline
+{\bf Pens}                       &           &        &                    \\
+PALETTE  scrpen   r   g  b       &     x     &     x  &       x            \\
+PEN  pen                         &     x     &     x  &       x            \\
+SETPEN  pen   colour   thickness &     x     &     x  &                    \\
+STYLE  style                     &     x     &     x  &       x            \\ \hline
+{\bf Styles}                     &           &        &                    \\
+BARCHART                         &     x     &     x  &                    \\
+DATAPOINT  pen   mark   join     &     x     &     x  &                    \\
+EJBY  percent                    &     x     &     x  &                    \\
+EJECT  slicenum                  &     x     &     x  &                    \\
+ERRORS                           &     x     &     x  &                    \\
+EWIDTH  width                    &     x     &     x  &                    \\
+GROUPED                          &     x     &     x  &                    \\
+HATCH                            &     x     &     x  &       x            \\
+HSPACE  space                    &     x     &     x  &       x            \\
+HTHICK  thick                    &     x     &     x  &       x            \\
+MARKSIZE  size                   &     x     &     x  &                    \\
+NOERRORS                         &     x     &     x  &                    \\
+OUTLINE                          &     x     &     x  &                    \\
+OVERLAYED                        &     x     &     x  &                    \\
+PIE                              &     x     &     x  &                    \\
+PSTART  degrees                  &     x     &     x  &                    \\
+SCATTER                          &     x     &     x  &                    \\
+SHADE                            &     x     &     x  &       x            \\
+SHRFIRST                         &     x     &     x  &                    \\
+SHRINK  val                      &     x     &     x  &                    \\
+STACKED                          &     x     &     x  &                    \\
+XY                               &     x     &     x  &                    \\ \hline
+\end{tabular}
+\normalsize
+\end{center}
+Table~\ref{tab:commands} Continued over\ldots
+
+\begin{center}
+\scriptsize
+\begin{tabular}{lccc} \hline
+                                 &           &        & Commands which     \\
+                                 & \multicolumn{2}{c}{Commands used in} %
+                                                      & do not cause the   \\ \cline{2-3}
+Command                          & Datafile  & ARexx  & graph to replot.   \\ \hline
+{\bf Fills}                      &           &        &                    \\
+FILL  num   x   y                &     x     &     x  &                    \\
+NOFILLALL                        &     x     &     x  &                    \\
+PFILL  num   angle               &     x     &     x  &                    \\ \hline
+{\bf Axes}                       &           &        &                    \\
+BOUNDS xmin xmax ymin ymax       &     x     &     x  &                    \\
+BOXED                            &     x     &     x  &                    \\
+CBOUNDS xmin xmax ymin ymax      &           &     x  &                    \\
+CLIP                             &     x     &     x  &                    \\
+FZERO                            &     x     &     x  &                    \\
+GRID                             &     x     &     x  &                    \\
+LOGX                             &     x     &     x  &                    \\
+LOGY                             &     x     &     x  &                    \\
+NOCLIP                           &     x     &     x  &                    \\
+SUBOFF                           &     x     &     x  &                    \\
+SUBON                            &     x     &     x  &                    \\
+SUBTICKS  x   y                  &     x     &     x  &                    \\
+TICKS  x   y                     &     x     &     x  &                    \\ \hline
+%  \end{tabular}
+%  \normalsize
+%  \end{center}
+%  Table~\ref{tab:commands} Continued over\ldots
+%  
+%  \begin{center}
+%  \scriptsize
+%  \begin{tabular}{lccc} \hline
+%                                   &           &        & Commands which     \\
+%                                   & \multicolumn{2}{c}{Commands used in} %
+%                                                        & do not cause the   \\ \cline{2-3}
+%  Command                          & Datafile  & ARexx  & graph to replot.   \\ \hline
+{\bf Labels and Titles}          &           &        &                    \\
+BPLAB  n   text                  &     x     &     x  &                    \\
+CENTXLAB                         &     x     &     x  &                    \\
+KEYFONT  font   size             &     x     &     x  &                    \\
+KEYPOS  x   y                    &     x     &     x  &                    \\
+KEYTEXT  n   text                &     x     &     x  &                    \\
+LABEL n str x y font size        &     x     &     x  &                    \\
+LFONT  font   size               &     x     &     x  &                    \\
+NOCENTXLAB                       &           &     x  &                    \\
+NOXLAB                           &     x     &     x  &                    \\
+NOYLAB                           &     x     &     x  &                    \\
+PRECISION  xprec   yprec         &     x     &     x  &                    \\
+TFONT  font   size               &     x     &     x  &                    \\
+TITLE  str   x   y               &     x     &     x  &                    \\
+XLABEL  str                      &     x     &     x  &                    \\
+YLABEL  str                      &     x     &     x  &                    \\
+XLFONT  font   size              &     x     &     x  &                    \\
+YLFONT  font   size              &     x     &     x  &                    \\
+XTFONT  font   size              &     x     &     x  &                    \\
+YTFONT  font   size              &     x     &     x  &                    \\ \hline
+\end{tabular}
+\normalsize
+\end{center}
+Table~\ref{tab:commands} Continued over\ldots
+
+\begin{table}[h]
+\begin{center}
+\scriptsize
+\begin{tabular}{lccc} \hline
+                                 &           &        & Commands which     \\
+                                 & \multicolumn{2}{c}{Commands used in} %
+                                                      & do not cause the   \\ \cline{2-3}
+Command                          & Datafile  & ARexx  & graph to replot.   \\ \hline
+{\bf Fitting}                    &           &        &                    \\
+FOURIER  n                       &     x     &     x  &                    \\
+REGRESS  n                       &     x     &     x  &                    \\
+REGWRITE                         &     x     &     x  &       x            \\
+REXXFIT  n   path/macro          &     x     &     x  &                    \\
+REXXWRITE                        &     x     &     x  &       x            \\
+ROBUST                           &     x     &     x  &                    \\
+RTOL  n                          &     x     &     x  &                    \\
+TOL  n                           &     x     &     x  &                    \\ \hline
+{\bf Miscellaneous Commands}     &           &        &                    \\
+CBOUNDS xmin xmax ymin ymax      &           &     x  &                    \\
+DRAW  x   y  [x   y]             &           &     x  &                    \\
+MACRO  path/macro                &     x     &        &                    \\
+MARK  x   y   num                &           &     x  &                    \\ \hline
+\end{tabular}           
+\end{center}
+\caption[Datafile and ARexx commands]{\label{tab:commands}Datafile and ARexx 
+commands. Crosses 
+in the appropriate columns indicate whether commands are available in a 
+datafile or through ARexx. The final column indicates ARexx commands 
+which do not cause the graph to replot.}
+\end{table}
+\clearpage
+
+\section{Data control commands}
+\index{Commands: Data control}
+\begin{description}
+\item[!] This is used to introduce a comment either at the beginning of a 
+line or after a command and its parameters.
+\item[NEWSET] This is used to introduce a new set of data, for multi-line 
+graphs. Optionally, {\tt NEWSET} may be used before the first set of data.
+\item[COLUMNS] This is followed by a single parameter representing the 
+number of columns of data to be read. In most cases this will be 2 (which is the 
+default) i.e.\ columns representing X and Y. If set to 1, the Y values will all be 
+set to zero. This is used only for Pie charts. If set to 3, the third column of data 
+will be used for the size of $\pm$ error bars. Thus the total size of each error 
+bar will be twice this value. If set to 4, separate error values will be read for
+the $+$ and $-$ error bars. The first value read (i.e.\ that in column 3) is the
+negative error and the second value read (i.e.\ that in column 4) is the positive
+error.
+\item[NDATA] The {\tt NDATA} command is followed by a parameter used to specify 
+the number of datapoints which may 
+follow. This defaults to 100. If a dataset has more than 100 points, the {\tt NDATA}
+command should be used to specify a greater maximum number. Alternatively, if you 
+only have a few datapoints, you can set a value of {\tt NDATA} less than 100 
+to conserve memory.
+\end{description}
+
+\section{Output}
+\index{Commands: Output}
+\begin{description}
+\item[SIZE] This is followed by the X and Y dimension of your output graph
+in inches. Note that this is the size of the axes; any axis  labels, titles, etc.\ 
+will fall outside these dimensions. EPSF and IFF-DR2D plots may be scaled by the 
+program which imports them.
+\item[OFFSET] This is followed by the X and Y offset of the bottom left hand 
+corner of the graph in inches. This command is ignored if you are producing EPSF or 
+IFF-DR2D output.
+\item[EPSF] Sets an output PostScript file to conform to the EPSF standard.
+\end{description}
+
+\section{Pens}
+\index{Commands: Pens}
+\begin{description}
+\item[PEN] This is followed by the pen number (1--6) to be used for the current
+dataset. If there is more than one dataset, this command should come after the
+{\tt NEWSET} command (though it need not come immediately after).
+\item[STYLE] This is followed by a line style (1--6) to be used for the current
+dataset. If there is more than one dataset, this command should come after the
+{\tt NEWSET} command (though it need not come immediately after).
+\item[SETPEN] This is followed by the pen number (1--6), the colour (between  1 and 
+the number of pens you have for HPGL plotting; 1--3 if you are not interested in HPGL 
+output) and the thickness for the PostScript output (in points).
+\item[PALETTE] This is followed by the screen pen number (0--3) and the R, G and B 
+values for the screen pen (each between 0 and 15).
+\end{description}
+
+\section{Styles}
+\index{Commands: Graph style}
+\label{sec:styles}
+\begin{description}
+\item[XY] Specifies the default line graph style.
+\item[SCATTER] Specifies a scatter plot.
+\item[BARCHART] Specifies a barchart.
+\item[PIE] Specifies a pie chart.
+\item[ERRORS] Switch on error bars if a 3 column dataset has been used.
+\item[NOERRORS] Switches off error bars (default).
+\item[DATAPOINT] This is followed by the pen number (1--6), the datapoint mark
+to be used by this pen (0--12) and a flag to indicate if this set of points should 
+be joined (1) or not (0). The mark numbers are specified as follows:\\
+0: no mark\\
+1: cross\\
+2: square\\
+3: filled square\\
+4: circle\\
+5: filled circle\\
+6: diamond\\
+7: filled diamond\\
+8: triangle\\
+9: filled triangle\\
+10: inverted triangle\\
+11: filled inverted triangle\\
+12: plus sign
+\item[EWIDTH] This is followed by the width of the cross part of an error bar (in 
+points). The pen and hence the width of the lines which form the error bars is the 
+same as that used for the current dataset.
+\item[MARKSIZE] This is followed by the size of datapoint marks (in points).
+\item[SHRINK] This is followed by the bar shrinkage percentage used for overlayed 
+and grouped bars.
+\item[SHRFIRST] Specifies that all sets of bars should be shrunk in the overlayed 
+style.
+\item[OVERLAYED] Specifies the overlayed bar style (default).
+\item[OUTLINE] Specifies the outline bar style.
+\item[GROUPED] Specifies the grouped bar style.
+\item[STACKED] Specifies the stacked bar style.
+\item[EJECT] This is followed by  a slice number for a slice to be ejected from a 
+piechart. The slices are numbered from 1.
+\item[EJBY] This is followed by the percentage of the piechart diameter by which 
+slices should be ejected.
+\item[PSTART] This is followed by the angle at which a piechart should start. This 
+defaults to 0\degree\ which is the right-pointing horizontal axis. 90\degree\ 
+specifies up-pointing vertical axis, etc.
+\item[HATCH] This specifies that fills should be hatched. This is the default for 
+HPGL plots where shading cannot be used. Note that the screen display shows only 
+shading.
+\item[SHADE] This specifies that fills should be shaded. This is the default except 
+in the case of HPGL plots where shading is not possible and this command will be 
+ignored.
+\item[HTHICK] This is followed by the hatch fill line thickness for PostScript, EPSF 
+and IFF-DR2D output. The value is specified in points.
+\item[HSPACE] This is followed by the hatch fill line spacing. The value is 
+specified in points.
+\end{description}
+
+\section{Axes}
+\index{Commands: Axes}
+\begin{description}
+\item[NOXLAB] Switches off the labels on the X-axis.
+\item[BOXED]  Boxes the axes. The axes are drawn in Pen~6.
+\item[LOGX] Take logs (to base 10) of the X-axis data.
+\item[LOGY] Take logs (to base 10) of the Y-axis data.
+\item[BOUNDS] This is followed by the boundary values: XMin XMax YMin and YMax.
+\item[CBOUNDS\dag] This is followed by XMin, XMax, YMin and YMax values. This works 
+in much the same way as the {\tt BOUNDS} command, but the `best' clean bounds are 
+calculated on these values. (This command may not work\ldots)
+\item[TICKS]  This is followed by the tick step size along X and Y.
+\item[SUBTICKS]  This is followed by the subtick step size along X and Y.
+\item[SUBON] Switches on axis subticks.
+\item[SUBOFF] Switches off axis subticks.
+\item[GRID] Switches on the grid across the graph. The grid is drawn in Pen~5.
+\item[FZERO] Causes the axes to follow zero on the graph, rather than being 
+placed along the bottom and left of the graph.
+\item[CLIP] Causes graph lines to be clipped at the bounds. (Default.)
+\item[NOCLIP] Causes graph lines not to be clipped at the bounds.
+\end{description}
+
+\section{Labels and Titles}
+\index{Commands:Text}
+\begin{description}
+\item[XLABEL] This is followed by a label for the X-axis. If this is more than 
+one word, it should be enclosed in double inverted commas.
+\item[YLABEL] This is followed by a label for the Y-axis. If this is more than 
+one word, it should be enclosed in double inverted commas.
+\item[LFONT] This is followed by a font and point size which will be used for X and Y 
+axis labels and titles. This command is retained for compatibility with {\bf AMPlot} 
+V1.0. \amplot\ now has separate commands to set the font for each of these items.
+\item[XTFONT] This is followed by the font and point size for the X axis title.
+\item[YTFONT] This is followed by the font and point size for the Y axis title.
+\item[XLFONT] This is followed by the font and point size for the X axis labels.
+\item[YLFONT] This is followed by the font and point size for the Y axis labels.
+\item[TITLE] This is followed by a string for the graph title (in double inverted 
+commas if more than one word) and the X and Y coordinates of the bottom centre of 
+the string. 
+\item[TFONT] This is followed by the font and point size for the title.
+\item[LABEL] This is followed by a label number, a string (in double inverted 
+commas if more than one word), the X and Y coordinates of the label, the font
+name and font point size. 
+\item[NOXLAB] Switches off labels on the X-axis.
+\item[CENTXLAB] Centres x-axis labels. Used mainly for barcharts.
+\item[NOCENTXLAB\dag] Switches off centering of X-axis labels. (Default.)
+\item[NOYLAB] Switches off labels on the Y-axis.
+\item[PRECISION] This is followed by the precision for the X and Y-axes. If the 
+values are positive, the labels will be displayed in normal numeric format with the 
+number specifying the number of decimal places. If negative, numbers will be 
+displayed in exponential  form. With log axes, only the sign of the precision is 
+important.
+\item[BPLAB] This is followed by a number for the bar or pie slice to be labelled
+and by the text for that label. If this is more than one word, it should be enclosed 
+in double inverted commas. The bars or pie slices are numbered from 1. When 
+specified in a datafile, this command will 
+automatically switch on bar labels for display. Note that bar/pie labels are not 
+available if any dataset contains more than 100 items.
+\item[KEYPOS] This is followed by the X and Y position for the start of the key.
+\item[KEYFONT] This is followed by the font and point size for the key.
+\item[KEYTEXT] This is followed by a dataset number and the text for the key for 
+this dataset. If the text contains more than one word, it should be enclosed 
+in double inverted commas.
+\end{description}
+
+\section{Fills}
+\index{Commands: Fills}
+\begin{description}
+\item[NOFILLALL] Do not fill all bars in a dataset. i.e.\ a fill must be 
+specified for each bar in turn.
+\item[FILL] This is followed by the fill shade (1--6, light to dark)
+and X and Y coordinates 
+about which to perform a fill. This command is not used for Pie charts, where
+{\tt PFILL} should be used.
+\item[PFILL] This is followed by the fill shade (1--6, light to dark)
+and an angle (in degrees).
+{\tt PFILL} is used only for Pie charts and the slice of pie at this angle will be 
+filled. The angle is defined in the standard manner as the anti-clockwise angle
+from the X-axis (i.e.\ the right-pointing  horizontal axis).
+\end{description}
+
+\section{Fitting}
+\index{Commands: Fitting}
+\begin{description}
+\item[REGRESS] This is followed by an integer between 2 and 20 to set the degree 
+of the polynomial to be used.
+\item[TOL] This is followed by the tolerence to be used in the regression fitting.
+\item[REGWRITE] Causes fitting data to be written to the file\\
+{\tt AMPlotFit.data}.
+\item[ROBUST] Switches on robust straight line fitting.
+\item[FOURIER] This is followed by a smoothing factor for use in Fourier 
+smoothing.
+\item[REXXFIT] This is followed by an integer between 2 and 20 to set the degree 
+of the ARexx polynomial to be used and the name of the function macro. This must 
+include the full device and path name for the macro.
+\item[RTOL] This is followed by the tolerence to be used in the ARexx regression 
+fitting.
+\item[REXXWRITE] Causes ARexx fitting data to be written to the file 
+{\tt AMPlotRexxFit.data}.
+\end{description}
+
+\section{Miscellaneous Commands}
+\index{Commands: Miscellaneous}
+\begin{description}
+\item[MARK\dag] This is followed by the X and Y-coordinates at which a datapoint mark 
+should be placed and the mark style number as described in Section~\ref{sec:styles} 
+for the {\tt DATAPOINT} command.
+\item[DRAW\dag] This is followed by 2 or 4 parameters. If 2 parameters are given,
+a line is 
+drawn from the current position to these coordinates. If 4 parameters are given they 
+are the start coordinates and end coordinates of a line. If the start coordinates 
+are identical to the end coordinates, the command is treated as a `move' rather than 
+a `draw' command and the current coordinates are simply updated without drawing 
+anything onto the graph. The {\tt PEN} command may be given first to define the pen 
+to be used.
+
+
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FONTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Fonts and Text}
+\label{ch:fonts}
+
+\section{PostScript Fonts}
+You\index{PostScript,Fonts} may specify any font you have available on 
+your printer. Typical fonts and styles are shown in Table~\ref{tab:fonts}. 
+PostScript is case sensitive when specifying font names. However, \amplot\ will
+automatically capitalise the first letter of the font name, the first letter after a 
+`--' and of the words Roman, 
+Bold, Italic and Oblique. In addition, you may specify `Times' rather than
+`Times--Roman'; the `--Roman' will be added by the program.
+The\index{fonts} Amiga will display any font it doesn't know as Times.
+You may use Amiga fonts other than Times and Helvetica, although, unless you have 
+fonts of these names on your PostScript printer, you will not be able to print 
+them.
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|} \hline
+Helvetica                & Times--Roman        \\
+Helvetica--Bold          & Times--Bold         \\
+Helvetica--Oblique       & Times--Italic       \\
+Helvetica--BoldOblique   & Times--BoldItalic   \\ \hline
+\end{tabular}
+\end{center}
+\caption[Typical PostScript Fonts]{\label{tab:fonts}Typical PostScript fonts 
+available on most PostScript printers and emulators. These are Adobe fonts and 
+non-Adobe printers and emulators may have lookalike fonts, though typically they 
+will also recognise these names.}
+\end{table}
+
+\section{Font Translation}
+\amplot\ provides a font translation table\index{font translation} for specifying 
+screen fonts and HPGL\index{HPGL}
+fonts. Two examples of the translation table are provided: {\tt amplot.ftrans.V2.0} 
+and {\tt amplot.ftrans.V1.3}. The install procedures will copy the appropriate 
+version to {\tt amplot.ftrans} in your {\tt S:}\ directory. When \amplot\ starts it 
+looks for {\tt amplot.ftrans} first in your current directory, then in the {\tt S:}\ 
+directory. The file is read only on program startup; if you alter the file, you must 
+restart \amplot.
+
+The file is free format and contains three columns. Each line must contain the 
+following three pieces of information.
+\begin{itemize}
+\item A PostScript or IFF-DR2D fontname.
+\item The equivalent screen font.
+\item The equivalent HPGL font number.
+\end{itemize}
+Using this table, you can select the best screen font to display for each PostScript 
+or IFF-DR2D font name. Note that the screen fonts are specified without the 
+{\tt .font} part of the name. Fonts in HPGL are simply specified by number. 
+Thus, you must also give a number for HPGL output. You should try to select an HPGL 
+font which looks something like the PostScript font.
+
+The table also provides a further important function. You should specify a 
+PostScript font name of `Alternate'. This is followed not by an equivalent screen 
+font, but by your chosen alternate font and HPGL font number. The alternate font is 
+normally used for Greek characters and mathematical symbols and you would normally 
+select the PostScript {\bf Symbol} font. The following section explains how you 
+should access the alternate font.
+
+If a font is not found in the translation table, a simple translation scheme is 
+applied which just drops any part of the font name after a {\bf .}, or {\bf --}.
+If no Amiga font is found with this name, the Times font is used.
+
+
+\section{Special Characters}
+\amplot\ allows\index{special characters} you to introduce two types of special 
+characters into any piece of 
+text which you can control directly (i.e.\ titles, extra labels, etc.). Note that 
+these special characters will {\em not\/} appear on the screen display; the normal 
+Roman style character will appear.
+
+The first 
+type or character is a superscript\index{superscript} or subscript\index{subscript}.
+To produce a superscript, use a 
+\verb1^1; to produce a subscript, use a \verb1_1. If you need to raise or lower a 
+group of characters, enclose them in curly brackets. For example, the Y-axis title of 
+your graph might be:
+$$ y = a + bx_1 + cx^{12} $$
+To obtain this label, you should enter the following title into the {\bf Text/Axis 
+Titles} requester:
+\begin{verbatim}
+                  y = a + bx_1 + cx^{12}
+\end{verbatim}
+
+The second type of character is one from an alternate font. Typically, you might 
+wish to include Greek\index{Alternate font, Greek} characters. These are supplied 
+in the PostScript {\bf Symbol} 
+font. To obtain characters from the alternate font, you should precede  the normal 
+character with a backslash. The exact mapping of normal Roman style font characters 
+to the alternate font will depend on the font you select. If we assume that the 
+letter `a' will generate the character $\alpha$ in the alternate font and you wish 
+to produce the label:
+$$ y = 3\alpha x + x^2 $$
+you would enter the label as:
+\begin{verbatim}
+                  y = 3\ax + x^2
+\end{verbatim}
+Note that you must place a backslash before every character to be in the alternate 
+font; you cannot group characters using curly brackets.
+
+The font translation table described in the previous section is used to specify the 
+alternate font.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HISTORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{History of \amplot}
+\amplot\ was inspired by a simple graph plotting program named CURVY written by 
+Dr.\ Andrew J.\ McLachlan of the M.R.C.\ laboratory in Cambridge. CURVY was 
+written in FORTRAN for the VAX computer using a plotting library called PLOT84.
+The first version of \amplot\ was written in 1989 to accept data files in the 
+same format used by CURVY, processing a subset of its commands, but producing 
+PostScript output. The original version of {\bf AMPlot} was written in generic
+portable C on the Amiga, so that the program could be compiled and run on any 
+computer. During 1990, the menu interface, full command interface and additional 
+features such as bar charts, pie charts, curve fitting routines and datapoint marks 
+were added. \amplot\ was a complete re-write performed in 1992 adding many new 
+features including HPGL and DR2D output, ARexx support and the 3D-look
+interface.
+
+In 1997, a Unix version was produced which lacks the graphical interface.
+
+The 3D-look interface was written using the {\bf STSLib} gadget and menu library 
+which is also available from {\sf SciTech Software}.
+
+\amplot\ was developed by Dr.\ Andrew Martin on an Amiga 3000/25/100 computer.
+The manual was produced using Amiga\TeX\ (Radical Eye Software) and
+\LaTeX. Porting to Unix was performed under Linux.
+
+
+\newpage
+\input{amplot.index}
+\end{document}

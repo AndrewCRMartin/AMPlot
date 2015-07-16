@@ -1,0 +1,152 @@
+\indexentry{Licence}{1}
+\indexentry{Copyright}{1}
+\indexentry{Backing Up}{1}
+\indexentry{Warranty}{1}
+\indexentry{warranty}{1}
+\indexentry{Registration}{2}
+\indexentry{AmigaDOS}{6}
+\indexentry{PostScript}{6}
+\indexentry{PostScript}{6}
+\indexentry{HPGL}{6}
+\indexentry{screen display}{6}
+\indexentry{pens}{6}
+\indexentry{Installation}{7}
+\indexentry{AmigaDOS}{7}
+\indexentry{AmigaDOS}{7}
+\indexentry{IFF-DR2D}{7}
+\indexentry{ARexx}{7}
+\indexentry{memory}{7}
+\indexentry{Disks}{7}
+\indexentry{diskfon.library}{8}
+\indexentry{tooltypes}{9}
+\indexentry{screen display}{9}
+\indexentry{editing}{10}
+\indexentry{PostScript,EPSF,HPGL,IFF-DR2D}{10}
+\indexentry{producing hard copy}{10}
+\indexentry{ARexx}{10}
+\indexentry{screen display}{11}
+\indexentry{Loading a datafile}{12}
+\indexentry{Open}{12}
+\indexentry{Labels and Titles}{13}
+\indexentry{Title}{13}
+\indexentry{Axis Titles}{13}
+\indexentry{font}{13}
+\indexentry{font}{13}
+\indexentry{Title}{13}
+\indexentry{Extra Labels}{14}
+\indexentry{Boxed Axes}{15}
+\indexentry{Grid Axes}{15}
+\indexentry{Log Axes}{15}
+\indexentry{Bounds}{15}
+\indexentry{Ticks}{15}
+\indexentry{Bounds}{15}
+\indexentry{Ticks}{16}
+\indexentry{Scatter Plot}{16}
+\indexentry{Line Setup}{16}
+\indexentry{pens}{16}
+\indexentry{Line Setup}{16}
+\indexentry{Linking datapoint marks}{16}
+\indexentry{Errors}{17}
+\indexentry{Regression}{17}
+\indexentry{Robust Fitting}{18}
+\indexentry{Fourier Transform Smoothing}{18}
+\indexentry{Plotting}{18}
+\indexentry{Pens}{19}
+\indexentry{Pens}{19}
+\indexentry{Pens}{19}
+\indexentry{Data Points, Line Setup}{19}
+\indexentry{Robust Fitting}{20}
+\indexentry{linear regression}{20}
+\indexentry{Bar Charts}{20}
+\indexentry{Bar Style}{20}
+\indexentry{Bar shrinkage}{21}
+\indexentry{Bar shrinkage}{21}
+\indexentry{Bar Grouped}{21}
+\indexentry{Bar Outline}{21}
+\indexentry{Bar Fills}{21}
+\indexentry{Fill All}{21}
+\indexentry{Pie Charts}{22}
+\indexentry{Pie Fills}{22}
+\indexentry{pie dimensions}{22}
+\indexentry{pie boxing}{22}
+\indexentry{Open}{24}
+\indexentry{Save}{24}
+\indexentry{Save As}{24}
+\indexentry{edit}{25}
+\indexentry{Edit}{25}
+\indexentry{environment variables, EDITOR}{25}
+\indexentry{Plot}{25}
+\indexentry{PostScript}{25}
+\indexentry{EPSF}{26}
+\indexentry{DTP}{26}
+\indexentry{Plot}{26}
+\indexentry{HPGL}{26}
+\indexentry{Plot}{26}
+\indexentry{DR2D}{26}
+\indexentry{Paper}{26}
+\indexentry{EPSF}{26}
+\indexentry{Set Pens}{27}
+\indexentry{screen palette}{27}
+\indexentry{ARexx}{28}
+\indexentry{Quit}{28}
+\indexentry{XY}{28}
+\indexentry{Line Plot}{28}
+\indexentry{Scatter Plot}{29}
+\indexentry{Bar Chart}{29}
+\indexentry{Pie Chart}{29}
+\indexentry{Errors}{29}
+\indexentry{eject}{30}
+\indexentry{Line Setup}{30}
+\indexentry{Bar Setup}{30}
+\indexentry{Bar Grouped}{30}
+\indexentry{Bar Outline}{31}
+\indexentry{Bar Shrink}{31}
+\indexentry{pie setup}{31}
+\indexentry{Log Axes}{31}
+\indexentry{Log Axes}{32}
+\indexentry{Boxed Axes}{32}
+\indexentry{Axis Grid}{32}
+\indexentry{Bounds}{32}
+\indexentry{Ticks}{32}
+\indexentry{clipping data}{32}
+\indexentry{Axis Follow Zero}{33}
+\indexentry{Title}{33}
+\indexentry{Axis Titles}{33}
+\indexentry{Axis Labels}{34}
+\indexentry{key}{35}
+\indexentry{Extra Labels}{35}
+\indexentry{Pens}{35}
+\indexentry{Line Style}{35}
+\indexentry{Bar Fills}{36}
+\indexentry{Pie Fills}{36}
+\indexentry{fill control,hatching,shading}{36}
+\indexentry{Regression}{36}
+\indexentry{Robust Fitting}{37}
+\indexentry{Fourier Smoothing}{37}
+\indexentry{regression,ARexx}{38}
+\indexentry{ARexx}{38}
+\indexentry{ARexx}{39}
+\indexentry{ARexx}{39}
+\indexentry{Datafile}{40}
+\indexentry{Commands}{40}
+\indexentry{ARexx}{40}
+\indexentry{Commands: Data control}{44}
+\indexentry{Commands: Output}{44}
+\indexentry{Commands: Pens}{45}
+\indexentry{Commands: Graph style}{45}
+\indexentry{Commands: Axes}{47}
+\indexentry{Commands:Text}{48}
+\indexentry{Commands: Fills}{50}
+\indexentry{Commands: Fitting}{50}
+\indexentry{Commands: Miscellaneous}{51}
+\indexentry{PostScript,Fonts}{54}
+\indexentry{fonts}{54}
+\indexentry{font translation}{55}
+\indexentry{HPGL}{55}
+\indexentry{special characters}{55}
+\indexentry{superscript}{56}
+\indexentry{subscript}{56}
+\indexentry{Alternate font, Greek}{56}
+\indexentry{tooltypes}{57}
+\indexentry{ARexx}{62}
+\indexentry{ARexx,ARexx Fitting}{64}

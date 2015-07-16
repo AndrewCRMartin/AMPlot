@@ -1,0 +1,55 @@
+CC   = gcc
+COPT = -g -Wall -I/user/amartin/include
+ANSI = /user/amartin/bin/ansi
+
+OFILES = menus.o main.o requesters.o handlers.o FileIO.o plots.o commands.o axes.o \
+         Fonts.o Plotting.o svdfit.o smooth.o robust.o rexx.o psroutines.o \
+         barchart.o piechart.o hpgl.o messages.o dr2d.o iffutil.o
+PFILES = menus.p main.p requesters.p handlers.p \
+         FileIO.p plots.p commands.p axes.p \
+         fonts.p plotting.p svdfit.p smooth.p \
+         robust.p rexx.p barchart.p piechart.p \
+         hpgl.p messages.p dr2d.p iffutil.p
+IFILES = amplot.h interface.h myio.h macros.h
+
+amplot : $(OFILES)
+	$(CC) $(COPT) -o amplot $(OFILES)
+
+
+main.o : main.c $(IFILES) menudefs.h
+	$(CC) $(COPT) -c $(COPT) main.c
+
+commands.o : commands.c $(IFILES) menudefs.h
+	$(CC) $(COPT) -c $(COPT) commands.c
+
+rexx.o : rexx.c $(IFILES) menudefs.h
+	$(CC) $(COPT) -c $(COPT) rexx.c
+
+psroutines.o :    psroutines.c   ps.h
+	$(CC) $(COPT) -c $(COPT) psroutines.c
+
+hpgl.o :          hpgl.c         hpgl.h
+	$(CC) $(COPT) -c $(COPT)     hpgl.c
+
+messages.o :      messages.c
+	$(CC) $(COPT) -c $(COPT)     messages.c
+
+dr2d.o :          dr2d.c         dr2d.h
+	$(CC) $(COPT) -c $(COPT)     dr2d.c
+
+iffutil.o :       iffutil.c
+	$(CC) $(COPT) -c $(COPT)     iffutil.c
+
+.c.o :  $< $(IFILES)
+	$(CC) $(COPT) -o $@ -c $<
+   
+
+clean :
+	rm $(OFILES)
+
+protos : $(PFILES)
+
+
+.c.p :
+	$(ANSI) -p $< $@
+

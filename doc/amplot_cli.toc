@@ -1,0 +1,55 @@
+\protect \contentsline {chapter}{\protect \numberline {1}Introduction}{4}
+\protect \contentsline {section}{\protect \numberline {1.1}Running {\protect \bf AMPlot2}}{4}
+\protect \contentsline {chapter}{\protect \numberline {2}Menus and Requesters}{5}
+\protect \contentsline {section}{\protect \numberline {2.1}The Project Menu}{5}
+\protect \contentsline {subsection}{\protect \numberline {2.1.1}Paper}{5}
+\protect \contentsline {subsection}{\protect \numberline {2.1.2}Set Pens}{5}
+\protect \contentsline {section}{\protect \numberline {2.2}The Style Menu}{6}
+\protect \contentsline {subsection}{\protect \numberline {2.2.1}XY}{6}
+\protect \contentsline {subsection}{\protect \numberline {2.2.2}Scatter}{6}
+\protect \contentsline {subsection}{\protect \numberline {2.2.3}Bar}{6}
+\protect \contentsline {subsection}{\protect \numberline {2.2.4}Pie}{6}
+\protect \contentsline {subsection}{\protect \numberline {2.2.5}Errors}{6}
+\protect \contentsline {subsection}{\protect \numberline {2.2.6}Eject Slice}{6}
+\protect \contentsline {subsection}{\protect \numberline {2.2.7}Line Setup}{7}
+\protect \contentsline {subsection}{\protect \numberline {2.2.8}Bar Setup}{7}
+\protect \contentsline {subsection}{\protect \numberline {2.2.9}Pie Setup}{7}
+\protect \contentsline {section}{\protect \numberline {2.3}The Axes Menu}{7}
+\protect \contentsline {subsection}{\protect \numberline {2.3.1}LogX}{7}
+\protect \contentsline {subsection}{\protect \numberline {2.3.2}LogY}{8}
+\protect \contentsline {subsection}{\protect \numberline {2.3.3}Boxed}{8}
+\protect \contentsline {subsection}{\protect \numberline {2.3.4}Grid}{8}
+\protect \contentsline {subsection}{\protect \numberline {2.3.5}Set Axes}{8}
+\protect \contentsline {subsection}{\protect \numberline {2.3.6}Follow Zero}{8}
+\protect \contentsline {section}{\protect \numberline {2.4}The Text Menu}{9}
+\protect \contentsline {subsection}{\protect \numberline {2.4.1}Title}{9}
+\protect \contentsline {subsection}{\protect \numberline {2.4.2}Axis Titles}{9}
+\protect \contentsline {subsection}{\protect \numberline {2.4.3}Axis \& Pie Labels}{9}
+\protect \contentsline {subsubsection}{Bar/Pie Labels Requester}{9}
+\protect \contentsline {subsection}{\protect \numberline {2.4.4}Key}{10}
+\protect \contentsline {subsection}{\protect \numberline {2.4.5}Extra Labels}{10}
+\protect \contentsline {section}{\protect \numberline {2.5}The Lines Menu}{10}
+\protect \contentsline {subsection}{\protect \numberline {2.5.1}Pen}{10}
+\protect \contentsline {subsection}{\protect \numberline {2.5.2}Style}{10}
+\protect \contentsline {subsection}{\protect \numberline {2.5.3}Fills}{10}
+\protect \contentsline {subsection}{\protect \numberline {2.5.4}Fill Control}{11}
+\protect \contentsline {subsection}{\protect \numberline {2.5.5}No Fills}{11}
+\protect \contentsline {section}{\protect \numberline {2.6}The Fitting Menu}{11}
+\protect \contentsline {subsection}{\protect \numberline {2.6.1}Regression}{11}
+\protect \contentsline {subsection}{\protect \numberline {2.6.2}Robust}{11}
+\protect \contentsline {subsection}{\protect \numberline {2.6.3}Fourier}{12}
+\protect \contentsline {chapter}{\protect \numberline {3}The {\protect \bf AMPlot2}\ Datafile}{13}
+\protect \contentsline {section}{\protect \numberline {3.1}Data control commands}{15}
+\protect \contentsline {section}{\protect \numberline {3.2}Output}{15}
+\protect \contentsline {section}{\protect \numberline {3.3}Pens}{15}
+\protect \contentsline {section}{\protect \numberline {3.4}Styles}{16}
+\protect \contentsline {section}{\protect \numberline {3.5}Axes}{17}
+\protect \contentsline {section}{\protect \numberline {3.6}Labels and Titles}{17}
+\protect \contentsline {section}{\protect \numberline {3.7}Fills}{18}
+\protect \contentsline {section}{\protect \numberline {3.8}Fitting}{19}
+\protect \contentsline {section}{\protect \numberline {3.9}Miscellaneous Commands}{19}
+\protect \contentsline {chapter}{\protect \numberline {4}Fonts and Text}{20}
+\protect \contentsline {section}{\protect \numberline {4.1}PostScript Fonts}{20}
+\protect \contentsline {section}{\protect \numberline {4.2}Font Translation}{20}
+\protect \contentsline {section}{\protect \numberline {4.3}Special Characters}{21}
+\protect \contentsline {chapter}{\protect \numberline {5}History of {\protect \bf AMPlot2}}{22}

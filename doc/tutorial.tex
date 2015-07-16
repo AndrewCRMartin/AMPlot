@@ -1,0 +1,586 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TUTORIAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Tutorial}
+This tutorial will let you experiment with the main features of \amplot\ using 
+datafiles supplied with the program.
+
+\section{Getting Started}
+For the purposes of this tutorial, you should start \amplot\ from the Workbench. 
+If you have not yet installed the program, please follow the installation 
+instructions carefully before proceeding.
+
+Open the \amplot\ drawer which has been created by the installation procedure by 
+double clicking, then double click on the \amplot\ icon to start the program.
+
+Remember that you may also start \amplot\ from the CLI/Shell should you so wish, but 
+that using the Workbench offers the advantage of being able to set various defaults 
+through the icon's tooltypes. For instructions on using icon tooltypes, see 
+Chapter~\ref{ch:tooltypes}. Before proceeding with this tutorial, you may wish to 
+follow the instructions in Chapter~\ref{ch:tooltypes} to set the default directory 
+to the {\tt Samples} sub-directory (specify the complete path to the {\tt Samples} 
+directory).
+
+When the program starts, it opens an interlaced high resolution screen\index{screen 
+display} with two windows. 
+The lower small window is used for informational and error messages.
+The upper large window is the main graph-plotting window.
+If you are using an NTSC Amiga, the message window may be hidden behind the main 
+window. However, when messages are displayed, this window will be sent to the front. 
+You may send the message window back behind the main window in the usual way, using
+the gadget at the top right of the window.
+
+
+
+
+
+
+\section{Loading a Datafile}
+To load a datafile\index{Loading a datafile},
+select the {\bf Open} item\index{Open} from the {\bf Project} menu. The
+keyboard shortcut \RA{O} may be used instead. A 
+file requester will appear on the screen from which you should select the file 
+{\tt demo1.dat} from the {\tt Samples} subdirectory of the \amplot\ directory.
+Make sure you load a valid data file and not (for example) a `.info' file.
+
+The exact form of the file requester will depend on the version of the operating 
+system you are using. 
+\begin{itemize}
+\item Under AmigaDOS~V1.3, the Heath file requester will be used. A 
+file is selected by clicking once on the filename, then once on the {\bf OK} gadget.
+If you cannot see the name of the file you wish to load, drag the slider to the 
+right of the list of files until your file becomes visible. To change directories, 
+click in the `drawer' gadget, hit \RA{X} to clear the gadget and type in the name of 
+the drive and directory from which you wish to load a file. Alternatively, you 
+may simply specify a drive or logical name (i.e. a name ending with a `:') and 
+single click on a file prefixed with {\tt (dir)} to select a sub-directory.
+\item Under AmigaDOS~V2.0, or above, the system-supplied file requester will be used.
+You should look in your Amiga manual for an exact explanation of using the system 
+file requester. Essentially it is very similar to the Heath requester used under 
+AmigaDOS~V1.3, but lets you select a filename by double-clicking on the name. 
+Directories in the filelist are highlighted in a different pen colour and have the 
+word {\tt Drawer}.
+\end{itemize}
+
+When you exit from the file requester, you will immediately see a graph displayed
+on the screen.
+
+Note that if you only have one disk drive, a system requester will appear asking
+you to replace the Workbench disk since \amplot\ needs to load fonts from the 
+{\tt FONTS:}\ directory. If the program posts such a requester, it may be necessary 
+to send the Workbench screen to the back again after the requester has been 
+satisfied.
+
+When  a particular font is used and read from disk, it is 
+cached internally by the program and does not need to be loaded from disk again. 
+If you have limited RAM and are using many fonts, you may find yourself running 
+short of memory after a long session of using \amplot. If this occurs, you should 
+shut down the program and start again. This is fairly unlikely to occur and the
+advantages in speed terms of font caching out-weigh this slight problem.
+
+
+
+
+
+
+
+\section{Adding Labels and Titles}
+Titles\index{Labels and Titles} may be added to the axes and labels may be placed 
+at arbitrary points on the graph. In addition, a title\index{Title}
+may be added to the graph. By default, this will appear towards 
+the top of the graph in the centre, but it may be positioned anywhere on the 
+graph.
+
+To\index{Axis Titles} add titles to the axes, select the {\bf Axis Titles}
+item from the {\bf Text} menu. 
+A requester will appear on the screen where titles may be entered for the X and Y 
+axes. Click in the appropriate string gadgets and type in the required label. The 
+default font\index{font} will be Times-Roman at 14pt size.
+You may change this by typing the name of the required font and size. 
+For further details of using fonts, see Chapter~\ref{ch:fonts}.
+Clearly, you may only specify the names of fonts\index{font}
+which you have available on your output device.
+For Amiga screen display, Times will be displayed if the requested font is not 
+available. Under AmigaDOS~V1.3, only a limited set of font sizes is available---if 
+an unsupported size is requested, the nearest available size will be shown on the 
+screen, but the final output will have the actual size requested. AmigaDOS~V2.0 
+supports font scaling and Compugraphic screen fonts may be selected for better 
+quality.
+
+Enter data into the requester as follows:
+
+\begin{tabular}{ll}
+{\bf XTitle}  & Time          \\
+{\bf YTitle}  & Volume        \\
+{\bf X Font}  & Times-Roman   \\
+{\bf X Size}  & 14            \\
+{\bf Y Font}  & Times-Roman   \\
+{\bf Y Size}  & 14            \\
+\end{tabular}
+
+\noindent Exit from the requester by clicking on the {\bf OK} gadget. The graph 
+will be 
+re-plotted on the screen with the axis labels as requested\footnote{Note that the
+Y-axis is labelled with letters going down the screen---the output on paper will be 
+written sideways up the paper.}.
+
+To add a title\index{Title} to the graph, 
+select the {\bf Title} item from the {\bf Text} menu.
+A requester appears into which you may enter the required title, font name and 
+size, as before. In addition, X and Y coordinates are shown. These refer to the 
+bottom middle of your title. i.e.\ Your title will be written with the bottom of 
+the text on the line specified by the Y coordinate and will be centred on the X 
+coordinate. By default, this position is centred across the graph and is 90\% of 
+its height. You may switch the title off by clearing the title text gadget. You 
+may type in any coordinates you wish and display the title by clicking on the {\bf 
+OK}
+gadget. An easier way to specify coordinates is simply to click on the graph at the
+point where you wish the title to appear. This may be done with all requesters which 
+require coordinates to be specified.
+Clicking on the {\bf Centre} gadget will reset the title to the default position.
+
+Enter data into the requester as follows:
+
+\begin{tabular}{ll}
+{\bf Title}       & Expansion          \\
+{\bf Font Name}   & Helvetica-Oblique  \\
+{\bf Size}        & 24                 \\
+\end{tabular}
+
+\noindent Exit from the requester by clicking on the {\bf OK} gadget.
+The graph will be re-plotted on the screen with the new title.
+
+You\index{Extra Labels} may also add arbitrary text labels to the graph. 
+This is primarily intended for labelling lines on multi-line graphs, but may be 
+used for any purpose. Select the {\bf Extra Labels} item from the {\bf Text} menu. 
+
+A requester will appear in which you may specify a label and coordinates at which 
+to place the label. These refer to the bottom left position of your label 
+(as opposed to the bottom centre in the case of the {\bf Text/Title} requester). 
+Again the font may be specified as before. In addition there is a set of gadgets 
+labelled {\bf Next}, {\bf Prev} and {\bf Kill}. These allow you to step through 
+any number of labels and, in the latter case, remove a label.
+
+Enter data into the requester as follows:
+
+\begin{tabular}{ll}
+{\bf Label} & Change in Volume   \\
+{\bf X}     & 2.0                \\
+{\bf Y}     & 8.0                \\
+{\bf Font}  & Times              \\
+{\bf Size}  & 10                 \\
+\end{tabular}
+
+\noindent Now click on the {\bf Next} gadget and type in the following:
+
+\begin{tabular}{ll}
+{\bf Label} & over time.   \\
+{\bf X}     & 2.0          \\
+{\bf Y}     & 5.0          \\
+{\bf Font}  & Times        \\
+{\bf Size}  & 10           \\
+\end{tabular}
+
+\noindent You may also simply hit the return key in the Y-position gadget to step to the next
+label, but the screen will only be refreshed with the new label appearing if you
+click on the {\bf Next} or {\bf Prev} gadgets.
+
+Exit from the requester by clicking on the {\bf OK} gadget. The {\bf Kill 
+All} gadget will delete all extra labels and exit the requester.
+
+
+
+
+
+
+
+\section{Changing The Axes}
+You may box\index{Boxed Axes} the graph axes, by selecting the {\bf Boxed}
+item from the {\bf Axes} menu (abbreviation \RA{B}). You may also choose 
+to have a grid\index{Grid Axes} drawn across the graph, by selecting the {\bf Grid} 
+item from the {\bf Axes} menu (abbreviation \RA{G}). If you switch on the grid, the 
+boxed option will be switched on automatically; however, switching off the grid will 
+not automatically switch off the boxed option.
+
+Try these options now. The menu items will have a tick by them when they are 
+activated. Selecting the option again will remove the tick mark and the grid, or box, 
+will disappear. Finish by switching on the Grid.
+
+You may choose to display log axes \index{Log Axes} by selecting the {\bf LogX} 
+and/or {\bf LogY} items from the {\bf Axes} menu. \amplot\ will ensure that your 
+graph data is valid for taking logs (i.e.\ all values are greater than zero). If the 
+data are invalid, selecting log axes will simply have no effect.
+Experiment with these options now, 
+ending up with {\bf LogX} switched on and {\bf LogY} switched off. Note once again 
+that the labels and title move with the data. Reset the title's position as before.
+
+
+\amplot\ will attempt to scale\index{Bounds} the axes automatically. 
+Sometimes, however, it is 
+not possible to get axes which look as aesthetically pleasing as one might hope.
+In addition, the automatic bounds calculations do not account for fitted lines or 
+error bars. 
+Thus, one may override the automatic bounds setting. Similarly, one may wish to 
+alter the default\index{Ticks} positioning of tick-marks along the axes.
+These settings are changed by the {\bf Set Axes} item from the {\bf Axes} menu.
+
+Select the {\bf Axes/Set Axes} menu item or use the keyboard shortcut
+\RA{A}\index{Bounds}. A requester will appear showing the current values for XMin, 
+XMax, YMin and YMax. You may alter these as desired, clicking on the {\bf OK} gadget 
+when you have finished. You may reset the default automatic boundary calculations 
+by clicking on the {\bf Auto} gadget.
+
+Enter data into the requester as follows:
+
+\begin{tabular}{lr}
+{\bf XMin} &  0.0 \\
+{\bf XMax} & 10.0 \\
+{\bf YMin} &  0.0 \\
+{\bf YMax} & 60.0 \\
+\end{tabular}
+
+\noindent You may also alter the spacing of the tick marks\index{Ticks} for 
+non-log axes. 
+The text gadgets for tick and sub-tick spacing of log axes will be disabled.
+Enter the following data into the requester:
+
+\begin{tabular}{lr}
+{\bf Y}     & 10.0   \\
+{\bf YSub}  &  5.0   \\
+\end{tabular}
+
+\noindent To switch on subticks (short tick marks without labels), click the 
+{\bf Sub} checkbox so the checkmark appears
+
+Finally, click on the {\bf OK} gadget; the graph will be re-plotted, with the
+Y-axis running up to the new maximum value of 60, altered tick spacing and subticks.
+Note how the labels and title move. This is because they are positioned with respect 
+to the original data and not the position on the page. To restore the title to its 
+default position on the page, select the {\bf Title} item from the {\bf Text} menu 
+and click on the {\bf Centre} gadget. Note that changing the axes from linear to log 
+or {\em vice versa\/} will reset the boundary and tick calculations.
+
+
+
+
+
+
+
+\section{Graph Style}
+Selecting the {\bf Scatter} item\index{Scatter Plot} from the
+{\bf Style} menu will remove the 
+line-graph and replace it with a scatter plot---try this now. The data points
+will be marked with crosses. The marks used for the data points may be changed
+using the {\bf Line Setup} item\index{Line Setup} from the {\bf Style}
+menu (Abbreviation: \RA{L}).
+
+\amplot\ supports 6 `pens'\index{pens} (these will be explained in more detail in 
+Section~\ref{sect:pens}).
+A requester will appear with the 6 pen numbers sets of mutual exclude radio buttons
+corresponding to the 12 available data point marks and a space corresponding to no 
+mark. All the sliders will be positioned under the cross at this stage. Your 
+current graph is drawn in Pen~1. Click on the radio button for Pen~1
+under the open circle and select the {\bf OK} gadget. The graph will be 
+replotted with circles at the data points.
+
+Once again select the {\bf Style/Line Setup}\index{Line Setup} menu item.
+Note that down the right hand side of the requester there are gadgets labelled 
+{\bf Link}\index{Linking datapoint marks} corresponding to each of the six pens. 
+Clicking on any one of these will join the datapoints for the 
+corresponding pen---if you select all these gadgets, the Scatter style will be 
+the same as the XY style. This feature allows you to read a datafile containing, 
+for example, experimental data and a curve fitted to these data. The experimental 
+data may then be displayed using unjoined datapoint marks (e.g.\ circles) while 
+the fitted curve is displayed using the {\bf Link} option with no datapoint marks.
+Exit the requester once again.
+
+If your data contains information about errors\index{Errors},
+you may switch error bars on and off using the {\bf Errors} item from the 
+{\bf Style} menu (Abbreviation \RA{E}).
+Try switching the error bars on and off now. This dataset contains three columns
+of data, so the same value is used for both positive and negative parts of the
+error bars. Four column datasets may be read specifying separate positive and
+negative errors. If any error value (positive or negative) is zero, no bar
+will be drawn for this half of the error.
+
+Bar chart and Pie chart styles are also available. These are described in 
+Sections~\ref{sect:bar} and~\ref{sect:pie} respectively.
+
+
+
+
+
+
+\section{Fitting and Smoothing}
+The {\bf Fit} menu gives you 4 types of fitting options. The first of these is 
+linear polynomial regression\index{Regression}. Select the {\bf Regression} item.
+A requester 
+will appear in which you can specify the degree of the polynomial you wish to 
+fit. This may be any value between 2 and 20, though must not exceed the number of 
+data points in your graph. If this is the case, a message requester will be posted
+every time the graph replots to warn you that the degree is too high.
+If you select a degree of 2, you will obtain straight line linear regression fitting, 
+where the program fits the data to the equation:
+$$y=a+bx$$
+Higher values add squared, cubed terms, etc.:
+$$y=a+bx+cx^2+dx^3+ex^4\ldots$$
+Try polynomial degrees between 2 and 10 selecting the {\bf OK} gadget after entering 
+the value.
+
+The coefficients for the fitting will be displayed in the message window in the 
+order shown  in the above equation.
+
+With this data set, values of 6, or more, will fit the data almost perfectly when 
+{\bf LogX} is on and {\bf LogY} is off.
+However, the fitted line will drop below the bottom axis of the graph, so it is 
+necessary to reset the bounds. Select a polynomial degree of 7, exit the requester 
+and reset YMin to $-30.0$. Once again you will need to reset the position of the 
+title.
+
+Select the {\bf Off} gadget in the {\bf Fit/Regression} requester to remove the 
+fitted line. Select the {\bf Robust} item\index{Robust Fitting}
+from the {\bf Fit} menu. No requester appears, 
+but a straight line will be displayed similar to that obtained from 
+{\bf Fit/Regression} using a degree of 2.
+If, however, you switch this option on as well, you will see the lines are 
+slightly different. Robust fitting weights against points which lie outside the 
+normal distribution. Section~\ref{sect:rob} will show you this in more detail.
+
+Switch off both the {\bf Regression} and the {\bf Robust} fitting options and 
+select the {\bf Fourier} option\index{Fourier Transform Smoothing}
+from the {\bf Fit} menu. Fourier smoothing 
+performs a Fast Fourier Transform (FFT) on the data, filters out high frequency 
+changes in the data (this is controlled by the smoothing factor which you 
+specify in the requester) and performs the inverse FFT. Smoothing factors greater 
+than half the number of data points render the graph virtually feature-less. Try 
+values between 2 and 10. The values need not be integers.
+
+The {\bf Fit/Rexx Fit} option will not be described here. It works in the same way 
+as regression fitting, but allows you to specify your own function to be fitted 
+using ARexx. See Chapter~\ref{ch:rxfit} for details.
+
+
+
+
+
+
+
+
+\section{Making Plots}
+To produce a file for plotting\index{Plotting}, simply select
+the {\bf PostScript}, {\bf HPGL}, or {\bf IFF-DR2D} subitem from the {\bf Plot} 
+item of the {\bf Project} menu  or use the keyboard shortcuts, \RA{P}, \RA{H} or 
+\RA{I} respectively.
+A file requester like that you saw for loading a file will appear. Here you 
+specify the filename for your plot file and select the {\bf OK} gadget. 
+If you produce 
+PostScript output, the file may then be sent to a PostScript printer or processed 
+by a PostScript interpreter such as PixelScript, Post, or SaxonScript. HPGL files 
+are sent to an HPGL pen plotter or processed by the public domain PLT:\ interpreter.
+IFF-DR2D plots must be imported into a suitable desktop publishing program or 
+structured drawing program.
+
+If you have a PostScript printer attached to your Amiga, you may simply specify {\tt 
+SER:}\ or {\tt PAR:}\ (depending on to which port your printer is connected) as 
+the PostScript filename (with no directory); if you have the SaxonScript 
+interpreter, {\tt PSC:}\ may be specified. Similarly, with HPGL plots, you may 
+specify {\tt SER:}\ or {\tt PAR:}\ or, if using the public domain interpreter, you 
+may simply specify the filename as {\tt PLT:}.
+
+
+
+
+
+
+
+
+
+\section{Pens, Colours and Lines}
+\label{sect:pens}
+You\index{Pens} will have noticed that the grid has been displayed 
+in different colours from the data line and the axes. \amplot\ allows you to specify 
+6 pens. Select the {\bf Set Pens} item from the {\bf Project} menu. In the 
+requester which appears, you will see that each pen has a colour and a thickness. 
+The graph's axes are always drawn in Pen~6, while the grid is drawn in Pen~5. The 
+graph which you have displayed on the screen at present has the data drawn in 
+Pen~1. Experiment with changing the colours of Pens~1,5 and~6, using only values 
+between 1 and~3. (You may specify large numbers which will be used to select pens for 
+HPGL output, but the screen display will automatically be set to a number between 1 
+and~3.) The specification of thickness relates to PostScript and IFF-DR2D
+output and the value is given in `points' (1pt $= \frac{1}{72}$inch). Select 
+the {\bf OK} gadget to redisplay the graph with your chosen colours.
+
+Reset\index{Pens} the graph style to a line graph
+({\bf XY} from the {\bf Style} menu) and
+switch any smoothing or fitting options off.
+The data is currently drawn using Pen~1, this may be changed using the {\bf Pen} 
+item of the {\bf Lines} menu. When you select this item, a requester will appear 
+in which you may enter a pen number between 1 and~6. Set the pen number to 2, 
+select {\bf OK} (or hit return) and click on one of the line's datapoints.
+The line will be replotted 
+using Pen~2 using the colour set for Pen~2 using the {\bf Project/Set Pens} menu item.
+Note that the data point marks have been retained when you switched to the line 
+graph and that they reverted to crosses when you select a pen number other 
+that 1. By selecting the {\bf Data Points} item from the {\bf Style} menu, you 
+may map each pen to a different data point mark.
+
+To\index{Pens} demonstrate the use of Pens in more detail,
+we will load a new dataset which has two sets of data.
+From the {\bf Project} menu, select the {\bf Open} item and load {\tt demo2.dat}.
+You will now see 2 lines plotted on the screen. The first of these is plotted in 
+Pen~1, the second in Pen~2. Once again, by using the {\bf Pen} item from the {\bf 
+Lines} menu, you may set either line to a different pen number. Experiment with 
+this now, ending up with one line in Pen~1 and the other in Pen~2.
+
+At\index{Data Points, Line Setup} this stage, all data points will be switched off.
+Select the {\bf Line Setup} item from the {\bf Style} menu. You will see all the 
+data points set to blanks. 
+Select {\bf Cancel} from this requester and select the {\bf Scatter} item from 
+the {\bf Style} menu. You will now see the two graphs plotted as scatter plots 
+with crosses. Selecting {\bf Style/Line Setup} once again will show all the Pens have 
+been set to crosses rather than blanks. The Scatter option automatically sets any
+Pens to crosses which have been left as blanks. Change Pen~1 to open circles and 
+Pen~2 to filled circles and select {\bf OK}. Use the {\bf Project/Set Pens} 
+requester to set both Pens 1 and~2 to a line thickness of 1pt and colour~1.
+Set the X-axis to a log scale and turn on regression smoothing with a polynomial 
+degree of 7. Create a title using the {\bf Text/Title} requester.
+
+We shall now create a key for the graph. Select {\bf Key} from the {\bf Text} menu.
+Set the key position to X: 7.0, Y: 40.0. Now enter a key label in the string gadget 
+labelled {\bf Text} for the first dataset. For this example, we'll call it 
+`Device A'. Hit the return key, or click the {\bf Next} gadget; the dataset number 
+will change to 2. Enter `Device B' in the {\bf Text} gadget. Now click on the {\bf 
+OK} gadget. A key will now appear on the graph. Try producing a plot of your graph.
+
+
+
+
+
+
+
+
+\section{Robust Fitting Demonstration}
+\label{sect:rob}
+Robust\index{Robust Fitting} fitting is useful when a set of data
+which should fit a straight line 
+contains a number of outlying points which disrupt linear regression
+\index{linear regression} analysis.
+To show the difference between the two fitting methods, load the file {\tt demo3.dat}
+into \amplot. A scatter plot will be displayed with two fitted lines. The 
+data points clearly fit a straight line although there are a number of outlying 
+points. These influence the regression fitting. The robust straight line fit, 
+however, is much less influenced by these outliers and fits the major set of 
+points much better.
+
+
+
+
+
+
+
+
+\section{Bar Charts}
+\label{sect:bar}
+Once again, load\index{Bar Charts} the file {\tt demo2.dat} into \amplot\ and 
+select the {\bf Bar} style from the {\bf Style} menu. The two sets of data will 
+be displayed as a bar chart. The first set of data is displayed in  Pen~1 with the 
+second set in Pen~2. Pens may be changed as before. Note also that the second set 
+of data has bars slightly narrower than the first set. Select the {\bf Bar Setup} 
+item\index{Bar Style} from the {\bf Style} menu. A requester will appear allowing 
+you to control various aspects of the barchart's style. For example you may set the 
+factor by which shrinkage\index{Bar shrinkage} of the bars between datasets will 
+occur. Setting this to zero will prevent any shrinkage. Conversely selecting 
+{\bf Shrink first data set} \index{Bar shrinkage} will cause the first dataset to 
+have shrunken bars as well.
+Selecting the {\bf Grouped} \index{Bar Grouped} gadget will change the layout of 
+the bars (when using this feature, the {\bf Shrink first data set} checkbox has
+no effect). Try this now. The barchart will be replotted with the bars from the 
+two datasets in pairs.
+
+Select the {\bf Style/Bar Style} menu item again and select {\bf Outline 
+chart}\index{Bar Outline}. When you select {\bf OK}, the barchart will be replotted 
+as an outline. This is useful if you are trying to represent the area under the bars.
+Finally, selecting {\bf Style/Bar Style} again and selecting the {\bf Stacked} 
+gadget will create a stacked barchart. This is most effective with the {\bf Shrink 
+first data set} checkbox set and with fills used in the bars. Note that the Y-axis 
+of the graph will be rescaled to fit the stacked bars.
+
+Select the {\bf Axis \& Pie Labels} item from the {\bf Text} menu.
+As well as allowing you to control the font used for the axis labels, this requester 
+allows you to switch off the axis labels and to centre the labels on the X-axis. 
+This is useful for barcharts. In addition, this requester allows you to place text 
+labels along the X-axis rather than numbers. Click on the {\bf Bar/Pie Labels }
+gadget at the bottom of the requester. A further requester will appear with a single 
+text gadget and {\bf Prev} and {\bf Next} gadgets. You can type a label for each bar 
+in the text gadget. Pressing the return key will have the same effect as clicking on 
+the {\bf Next} gadget. Enter some text for each of the bars. When you have finished 
+click the {\bf OK} gadget. The main {\bf Axis Labels} requester will now have the 
+{\bf No X-labels} checkbox set. Click the {\bf OK} gadget. The normal X-axis labels 
+will disappear and the text labels will appear instead.
+
+In the overlayed, grouped and stacked bar styles, the bars may be filled using 
+the {\bf Fills} item\index{Bar Fills} from the {\bf Lines} menu. 
+Choose the {\bf Overlayed} style from the {\bf Style/Bar Setup} requester.
+Select one of the fills from the sub-items of the {\bf Lines/Fills} menuitem.
+The pointer will change to the click `target'. Click with the 
+left mouse button inside one of the bars.
+All the bars in this dataset will be filled. Do the same 
+with the second dataset, selecting a different fill. You may have noticed that 
+the {\bf Fill all bars} checkbox\index{Fill All} in the {\bf Style/Bar Setup} 
+requester has been set. If you click this checkbox to remove the checkmark,
+only the actual bars in which you clicked will be filled. This is most useful when 
+you only have one dataset and wish to fill each bar differently. The current fills 
+may be switched off by choosing the {\bf No Fills} item from the {\bf Lines} menu.
+
+Options such as the grid, setting the tick 
+marks, bounds, titles, labels, etc.\ are all still available to you.
+Try some of these options for yourself.
+
+
+
+
+
+
+
+\section{Pie Charts}
+\label{sect:pie}
+Load\index{Pie Charts} the file {\tt demo4.dat} into \amplot. The data will be 
+displayed 
+as a Pie chart. Up until now, the {\bf Pie} item from the {\bf Style} menu has been 
+disabled. Your dataset must contain the keyword {\tt PIE} of {\tt Columns 1} to 
+enable the piechart option. Data to be presented as a piechart tends to be of a 
+different form from data you would display in another form so this has been done to 
+prevent meaningless graphs. (Note that it is possible to set the pie style for 
+datasets which do not have one of these keywords by using  the ARexx interface. See 
+Chapter~\ref{ch:datafile} and Chapter~\ref{ch:rxfit} for details.)
+
+As with bar charts, fills\index{Pie Fills} may be used.
+The {\bf Axes/Boxed} menu item will create a box around the chart. The box will 
+match the dimensions specified in the {\bf Project/Paper} requester exactly.
+To alter the size of the piechart with respect to the box, making room for a key 
+and/or a title, the {\bf Axes/Set Axes} requester should be used. The piechart 
+itself has a radius of 100\index{pie dimensions} units. The box defaults to minimum 
+and maximum values of $\pm120$. These values may be increased to make the 
+pie\index{pie boxing} smaller within the box.
+
+The {\bf Text/Extra labels} menu item may be used to add arbitrary labels to the 
+piechart. The centre of the pie is at coordinate 0.0,~0.0 and the radius of the 
+circle is 100.0 units. The {\bf Text/Axis \& Pie Labels} requester may be used to 
+add a label next to each slice of the pie. Select this menu item and click the {\bf 
+Bar/Pie labels} gadget. Into the requester which appears, you can enter a label for 
+each  slice of the pie. Click {\bf OK} on each of the requesters and the labels will 
+appear next to the pie slices.
+
+Slices may be ejected from the pie using the {\bf Eject Slice} item of the {\bf 
+Style} menu. Select this item and click on a slice of the pie. The slice will be 
+ejected from the pie and may be replaced by repeating the procedure. The {\bf Pie 
+Setup} item of the {\bf Style} menu allows you to specify the percentage of the size 
+of the piechart by which the slice is ejected. It also allows you to specify the 
+angle used for the start of the piechart. By default, this is 0\degree\ which is 
+the horizontal right-pointing axis. 90\degree\ specifies the up-pointing vertical 
+axis. Any number between 0.0 and 360.0 may be given.
+
+Labels added with the {\bf Text/Axis \& Pie Labels} requester will move with the pie 
+when you change the start angle. Labels added with the {\bf Text/Extra labels} 
+requester will {\em not\/} move with the pie start angle but are fixed with respect 
+to the graph `axes'.
+

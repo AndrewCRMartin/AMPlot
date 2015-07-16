@@ -1,0 +1,107 @@
+\contentsline {chapter}{\numberline {1}Introduction}{6}
+\contentsline {section}{\numberline {1.1}Installation}{7}
+\contentsline {section}{\numberline {1.2}Running {\pbf AMPlot2}}{9}
+\contentsline {section}{\numberline {1.3}Printing Your Graph}{10}
+\contentsline {chapter}{\numberline {2}Tutorial}{11}
+\contentsline {section}{\numberline {2.1}Getting Started}{11}
+\contentsline {section}{\numberline {2.2}Loading a Datafile}{12}
+\contentsline {section}{\numberline {2.3}Adding Labels and Titles}{13}
+\contentsline {section}{\numberline {2.4}Changing The Axes}{15}
+\contentsline {section}{\numberline {2.5}Graph Style}{16}
+\contentsline {section}{\numberline {2.6}Fitting and Smoothing}{17}
+\contentsline {section}{\numberline {2.7}Making Plots}{18}
+\contentsline {section}{\numberline {2.8}Pens, Colours and Lines}{19}
+\contentsline {section}{\numberline {2.9}Robust Fitting Demonstration}{20}
+\contentsline {section}{\numberline {2.10}Bar Charts}{20}
+\contentsline {section}{\numberline {2.11}Pie Charts}{22}
+\contentsline {chapter}{\numberline {3}Menus and Requesters}{24}
+\contentsline {section}{\numberline {3.1}The Project Menu}{24}
+\contentsline {subsection}{\numberline {3.1.1}Open}{24}
+\contentsline {subsection}{\numberline {3.1.2}Save}{24}
+\contentsline {subsection}{\numberline {3.1.3}Save As}{24}
+\contentsline {subsection}{\numberline {3.1.4}Edit}{25}
+\contentsline {subsection}{\numberline {3.1.5}Plot}{25}
+\contentsline {subsubsection}{PostScript}{25}
+\contentsline {subsubsection}{HPGL}{26}
+\contentsline {subsubsection}{IFF-DR2D}{26}
+\contentsline {subsection}{\numberline {3.1.6}Paper}{26}
+\contentsline {subsection}{\numberline {3.1.7}Set Pens}{27}
+\contentsline {subsection}{\numberline {3.1.8}Screen Palette}{27}
+\contentsline {subsection}{\numberline {3.1.9}Screen To Back}{28}
+\contentsline {subsection}{\numberline {3.1.10}About}{28}
+\contentsline {subsection}{\numberline {3.1.11}Quit}{28}
+\contentsline {section}{\numberline {3.2}The Style Menu}{28}
+\contentsline {subsection}{\numberline {3.2.1}XY}{28}
+\contentsline {subsection}{\numberline {3.2.2}Scatter}{29}
+\contentsline {subsection}{\numberline {3.2.3}Bar}{29}
+\contentsline {subsection}{\numberline {3.2.4}Pie}{29}
+\contentsline {subsection}{\numberline {3.2.5}Errors}{29}
+\contentsline {subsection}{\numberline {3.2.6}Eject Slice}{30}
+\contentsline {subsection}{\numberline {3.2.7}Line Setup}{30}
+\contentsline {subsection}{\numberline {3.2.8}Bar Setup}{30}
+\contentsline {subsection}{\numberline {3.2.9}Pie Setup}{31}
+\contentsline {section}{\numberline {3.3}The Axes Menu}{31}
+\contentsline {subsection}{\numberline {3.3.1}LogX}{31}
+\contentsline {subsection}{\numberline {3.3.2}LogY}{32}
+\contentsline {subsection}{\numberline {3.3.3}Boxed}{32}
+\contentsline {subsection}{\numberline {3.3.4}Grid}{32}
+\contentsline {subsection}{\numberline {3.3.5}Set Axes}{32}
+\contentsline {subsection}{\numberline {3.3.6}Follow Zero}{33}
+\contentsline {section}{\numberline {3.4}The Text Menu}{33}
+\contentsline {subsection}{\numberline {3.4.1}Title}{33}
+\contentsline {subsection}{\numberline {3.4.2}Axis Titles}{33}
+\contentsline {subsection}{\numberline {3.4.3}Axis \& Pie Labels}{34}
+\contentsline {subsubsection}{Bar/Pie Labels Requester}{34}
+\contentsline {subsection}{\numberline {3.4.4}Key}{35}
+\contentsline {subsection}{\numberline {3.4.5}Extra Labels}{35}
+\contentsline {section}{\numberline {3.5}The Lines Menu}{35}
+\contentsline {subsection}{\numberline {3.5.1}Pen}{35}
+\contentsline {subsection}{\numberline {3.5.2}Style}{35}
+\contentsline {subsection}{\numberline {3.5.3}Fills}{36}
+\contentsline {subsection}{\numberline {3.5.4}Fill Control}{36}
+\contentsline {subsection}{\numberline {3.5.5}No Fills}{36}
+\contentsline {section}{\numberline {3.6}The Fitting Menu}{36}
+\contentsline {subsection}{\numberline {3.6.1}Regression}{36}
+\contentsline {subsection}{\numberline {3.6.2}Robust}{37}
+\contentsline {subsection}{\numberline {3.6.3}Fourier}{37}
+\contentsline {subsection}{\numberline {3.6.4}Rexx Fit}{38}
+\contentsline {section}{\numberline {3.7}The Rexx Menu}{38}
+\contentsline {subsection}{\numberline {3.7.1}Execute Macro}{38}
+\contentsline {subsection}{\numberline {3.7.2}Install Macro}{38}
+\contentsline {subsection}{\numberline {3.7.3}Debug}{39}
+\contentsline {chapter}{\numberline {4}The {\pbf AMPlot2}\ Datafile}{40}
+\contentsline {section}{\numberline {4.1}Data control commands}{44}
+\contentsline {section}{\numberline {4.2}Output}{44}
+\contentsline {section}{\numberline {4.3}Pens}{45}
+\contentsline {section}{\numberline {4.4}Styles}{45}
+\contentsline {section}{\numberline {4.5}Axes}{47}
+\contentsline {section}{\numberline {4.6}Labels and Titles}{48}
+\contentsline {section}{\numberline {4.7}Fills}{50}
+\contentsline {section}{\numberline {4.8}Fitting}{50}
+\contentsline {section}{\numberline {4.9}Miscellaneous Commands}{51}
+\contentsline {chapter}{\numberline {5}Fonts and Text}{54}
+\contentsline {section}{\numberline {5.1}PostScript Fonts}{54}
+\contentsline {section}{\numberline {5.2}Font Translation}{55}
+\contentsline {section}{\numberline {5.3}Special Characters}{55}
+\contentsline {chapter}{\numberline {6}Icon Tooltypes}{57}
+\contentsline {section}{\numberline {6.1}Size}{58}
+\contentsline {section}{\numberline {6.2}Offset}{58}
+\contentsline {section}{\numberline {6.3}HPGLMargin}{59}
+\contentsline {section}{\numberline {6.4}Title}{59}
+\contentsline {section}{\numberline {6.5}XTitle}{59}
+\contentsline {section}{\numberline {6.6}YTitle}{59}
+\contentsline {section}{\numberline {6.7}XLabel}{59}
+\contentsline {section}{\numberline {6.8}YLabel}{60}
+\contentsline {section}{\numberline {6.9}Key}{60}
+\contentsline {section}{\numberline {6.10}Extralabel}{60}
+\contentsline {section}{\numberline {6.11}Hatching}{60}
+\contentsline {section}{\numberline {6.12}HatchControl}{60}
+\contentsline {section}{\numberline {6.13}Pen0, Pen1, Pen2, Pen3}{61}
+\contentsline {section}{\numberline {6.14}DIR}{61}
+\contentsline {section}{\numberline {6.15}NOSHANGHAI}{61}
+\contentsline {section}{\numberline {6.16}AXISBOUNDS}{61}
+\contentsline {chapter}{\numberline {7}The ARexx Interface}{62}
+\contentsline {section}{\numberline {7.1}General Notes}{62}
+\contentsline {section}{\numberline {7.2}Fitting With ARexx}{64}
+\contentsline {chapter}{\numberline {8}Notes for AMPlot V1 Users}{67}
+\contentsline {chapter}{\numberline {9}History of {\pbf AMPlot2}}{68}

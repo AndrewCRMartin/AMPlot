@@ -1,0 +1,95 @@
+\begin{theindex}
+
+\item Alternate font, Greek 56
+\item AmigaDOS 6
+\item AmigaDOS 7
+\item ARexx 7, 10, 28, 38--40, 62, 64
+\item ARexx Fitting 64
+\item Axes 
+   \subitem Bounds 15, 32
+   \subitem Boxed 15, 32
+   \subitem Clipping data 32
+   \subitem Follow zero 33
+   \subitem Grid   15, 32
+   \subitem Labels 34
+   \subitem Ticks 15, 16, 32
+   \subitem Titles 13, 33
+\item Backing up 1
+\item Bar charts 20, 29
+   \subitem Fills 21, 36
+   \subitem Fill all bars 21
+   \subitem Grouped style 21, 30
+   \subitem Outline style 21, 31
+   \subitem Setup requester 20, 30
+   \subitem Shrinkage 21, 31
+\item Commands 40
+   \subitem Axes 47
+   \subitem Data control 44
+   \subitem Fills 50
+   \subitem Fitting 50
+   \subitem Graph style 45
+   \subitem Miscellaneous 51
+   \subitem Output 44
+   \subitem Pens 45
+   \subitem Text 48
+\item Copyright 1
+\item Data point marks 19
+\item Datafile 40
+\item Diskfont library 8
+\item Disks 7
+\item DTP 26
+\item Editing files 10, 25
+\item Environment variables 25
+\item EPSF bounding box 61
+\item Error bars 17, 29
+\item Fills 21, 36
+   \subitem Hatching and shading 36
+\item Fonts 13, 54
+   \subitem Translation table 55
+\item Fourier Smoothing 18, 37
+\item Grid 15, 32
+\item Installation 7
+\item Key 35
+\item Licence 1
+\item Line Plot 28
+   \subitem Setup requester 16, 19, 30, 35
+\item Linear regression 17, 20, 36, 38
+\item Linking datapoint marks 16
+\item Loading a datafile 12, 24
+\item Log Axes 15, 31, 32
+\item Memory 7
+\item Paper requester 26
+\item Pens 6, 16, 19, 35
+   \subitem Setting 27
+\item Pie charts 22, 29
+   \subitem Boxing 22
+   \subitem Dimensions 22
+   \subitem Ejecting slices 30
+   \subitem Fills 22, 36
+   \subitem Setup requester 31
+\item Plotting 10, 18, 25, 26
+   \subitem EPSF 10, 26, 61
+   \subitem HPGL 6, 10, 26, 55
+   \subitem IFF-DR2D 7, 10, 26
+   \subitem PostScript 6, 10, 25
+\item Quit 28
+\item Registration 2
+\item Robust fitting 18, 20, 37
+\item Saving graphs 24
+\item Scatter plot 16, 29
+   \subitem Linking datapoint marks 16
+\item Screen display 6, 9, 11
+   \subitem Palette 27
+\item Shanghai mode 61
+\item Special characters 55
+   \subitem Subscript 56
+   \subitem Superscript 56
+\item Text
+   \subitem Axis labels 34
+   \subitem Axis titles 13, 33
+   \subitem Extra labels 14, 35
+   \subitem Title 13, 33
+\item Tooltypes 9, 57
+\item Warranty 1
+
+\end{theindex}
